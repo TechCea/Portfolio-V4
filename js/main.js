@@ -43,66 +43,66 @@ document.addEventListener("DOMContentLoaded", function() {
         ];
     
         let currentIndex = 0;
-    let timer;
-    let isLightMode = false;
-
-    function updateProfilePicture() {
-        const images = isLightMode ? lightModeImages : darkModeImages;
-        profilePicture.src = images[currentIndex];
-    }
-
-    function changeImage() {
-        currentIndex = (currentIndex + 1) % (isLightMode ? lightModeImages : darkModeImages).length;
-        updateProfilePicture();
-    }
-
-    function startAnimation() {
-        timer = setInterval(changeImage, 3000); // Cambia la imagen cada 3 segundos
-    }
-
-    function toggleTheme(event) {
-        event.preventDefault();
-        document.documentElement.classList.toggle('light-mode');
-        isLightMode = document.documentElement.classList.contains('light-mode');
-
-        if (isLightMode) {
+        let timer;
+        let isLightMode = false;
+    
+        function updateProfilePicture() {
+            const images = isLightMode ? lightModeImages : darkModeImages;
+            profilePicture.src = images[currentIndex];
+        }
+    
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % (isLightMode ? lightModeImages : darkModeImages).length;
+            updateProfilePicture();
+        }
+    
+        function startAnimation() {
+            timer = setInterval(changeImage, 3000); // Cambia la imagen cada 3 segundos
+        }
+    
+        function toggleTheme(event) {
+            event.preventDefault();
+            document.documentElement.classList.toggle('light-mode');
+            isLightMode = document.documentElement.classList.contains('light-mode');
+    
+            if (isLightMode) {
+                icon.classList.remove('bx-moon');
+                icon.classList.add('bx-sun');
+                toggle.setAttribute('data-label', 'Modo Claro');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('bx-sun');
+                icon.classList.add('bx-moon');
+                toggle.setAttribute('data-label', 'Modo Noche');
+                localStorage.setItem('theme', 'dark');
+            }
+    
+            // Actualizar la imagen del perfil inmediatamente al cambiar el tema
+            updateProfilePicture();
+        }
+    
+        // Recuperar el tema del localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.classList.add('light-mode');
+            isLightMode = true;
             icon.classList.remove('bx-moon');
             icon.classList.add('bx-sun');
             toggle.setAttribute('data-label', 'Modo Claro');
-            localStorage.setItem('theme', 'light');
         } else {
+            document.documentElement.classList.remove('light-mode');
+            isLightMode = false;
             icon.classList.remove('bx-sun');
             icon.classList.add('bx-moon');
             toggle.setAttribute('data-label', 'Modo Noche');
-            localStorage.setItem('theme', 'dark');
         }
-
-        // Actualizar la imagen del perfil inmediatamente al cambiar el tema
-        updateProfilePicture();
-    }
-
-    // Recuperar el tema del localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.documentElement.classList.add('light-mode');
-        isLightMode = true;
-        icon.classList.remove('bx-moon');
-        icon.classList.add('bx-sun');
-        toggle.setAttribute('data-label', 'Modo Claro');
-    } else {
-        document.documentElement.classList.remove('light-mode');
-        isLightMode = false;
-        icon.classList.remove('bx-sun');
-        icon.classList.add('bx-moon');
-        toggle.setAttribute('data-label', 'Modo Noche');
-    }
-
-    // Iniciar la animación automáticamente cuando se carga la página
-    startAnimation();
-    updateProfilePicture(); // Asegurarse de que la imagen inicial sea la correcta
-
-    toggle.addEventListener('click', toggleTheme);
-});
+    
+        // Iniciar la animación automáticamente cuando se carga la página
+        startAnimation();
+        updateProfilePicture(); // Asegurarse de que la imagen inicial sea la correcta
+    
+        toggle.addEventListener('click', toggleTheme);
+    });
     
 fetch('./js/projects.json')
         .then(response => {
@@ -293,6 +293,43 @@ emailButtons.forEach(button => {
         });
     });
 });
+
+
+ // Seleccionar todos los elementos con la clase copyDiscordButton
+ const discordButtons = document.querySelectorAll('.copyDiscordButton');
+
+ // Tu nombre de usuario de Discord a copiar
+ const discordUser = "Baggins#9264"; // Reemplaza con tu Discord tag
+
+ // Agregar evento click a cada botón
+ discordButtons.forEach(button => {
+     button.addEventListener("click", function(event) {
+         event.preventDefault(); // Prevenir la acción predeterminada del enlace
+
+         // Copiar el nombre de usuario de Discord al portapapeles
+         navigator.clipboard.writeText(discordUser).then(function() {
+             // Mostrar alerta personalizada con SweetAlert2 como toast
+             Swal.fire({
+                 icon: 'success',
+                 title: '¡Copiado!',
+                 text: 'Nombre de usuario de Discord copiado al portapapeles',
+                 toast: true,
+                 position: 'top-end',
+                 showConfirmButton: false,
+                 timer: 2000,
+                 timerProgressBar: true
+             });
+         }).catch(function(err) {
+             console.error("Error al copiar el nombre de usuario de Discord: ", err);
+             Swal.fire({
+                 icon: 'error',
+                 title: 'Error',
+                 text: 'No se pudo copiar el nombre de usuario de Discord',
+                 confirmButtonText: 'OK'
+             });
+         });
+     });
+ });
 
 
 document.querySelectorAll('.acordion li').forEach(item => {
