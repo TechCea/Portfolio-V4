@@ -244,11 +244,11 @@ header {
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
+    background-image: radial-gradient(circle farthest-side at 50% 100%, var(--orange-base), rgba(84, 61, 199, 0));
     overflow: hidden;
 }
 
 .bento-item {
-    background-image: radial-gradient(circle farthest-side at 50% 140%, var(--wine-red), rgba(84, 61, 199, 0));
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -403,9 +403,7 @@ header {
     grid-row: 3 / 4; /* Ocupa las filas 2 y 3 */
     text-align: center;
     padding: 1rem;
-    background-color: #0c0e10; /* Matches your dark theme */
     border-radius: 0.5rem;
-    border: 2px solid #262626;
     color: var(--textgray);
 }
 .contact .contact-tag {
@@ -456,7 +454,7 @@ header {
 
 .technologies {
     grid-column: 3 / 7;
-    grid-row: 3 / 5;
+    grid-row: 3 / 3;
     text-align: center;
     & img{
         width: 100%;
