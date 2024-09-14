@@ -31,6 +31,14 @@
     --tw-gradient-via-position: ;
     --tw-gradient-to-position: ;
     --radius-8: 8px;
+    --teal: #3BA39D;
+    --light-white: #F5F7FA;
+    --light-orange: #FF8552;
+    --dark-gray: #2B2B2B;
+    --dark-teal: #01726F;
+    --pastel-orange: #F5A06A;
+    --light-gray: #EDEDED;
+
 }
 body{
     display: flex;
@@ -64,7 +72,7 @@ header {
     justify-content: center;
     align-items: center;
     padding-top: 15px;
-    z-index: 3;
+    z-index: 99999;
 }
 
 .navbar {
@@ -75,7 +83,7 @@ header {
     padding: 10px 20px;
     border-radius: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 4;
+    z-index: 1;
 }
 
 .navbar-item {
@@ -242,9 +250,8 @@ header {
     grid-auto-rows: 150px;
     gap: 1.3rem;
     width: 100vw;
-    height: 100vh;
     box-sizing: border-box;
-    background-image: radial-gradient(circle farthest-side at 50% 100%, var(--orange-base), rgba(84, 61, 199, 0));
+    background-image: radial-gradient(circle farthest-side at 50% 100%, var(--garnet-red), rgba(84, 61, 199, 0));
     overflow: hidden;
 }
 
@@ -255,8 +262,8 @@ header {
     text-align: left;
     justify-content: center;
     border-color: rgba(148, 163, 184, 0.1);  /* Color del borde */
-    border-width: 2px;                       /* Grosor del borde */
-    border-radius: 0.75rem;                  /* Radio del borde (redondeo) */
+    border-width: 2px;                       
+    border-radius: 0.75rem;                 
     border-style: solid;
     padding: 5px;
     & h3{
@@ -280,15 +287,13 @@ header {
 }
 
 .header {
-    padding: 2rem;
-    grid-column: 1 / 5; /* Ocupa dos columnas */
+    padding: 0 2rem 2rem 2rem;
+    grid-column: 1 / 3; /* Ocupa dos columnas */
     grid-row: 1/ 3; /* Ocupa solo la primera fila */
-    color: var(-);
     & h1{
         font-size:  2.25rem;
         font-weight: 700;
         color: var(--white);
-        margin-top: 20px;
         padding: 5px 5px 0 5px;
         align-items: left;
     }
@@ -302,23 +307,21 @@ header {
     }
 }
 .social-links{
-    grid-column: 7 / 9;
-    grid-row: 1 / 2;
-}
-
-.info {
     grid-column: 5 / 7;
     grid-row: 1 /2;
 }
+
+.studies {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+}
 .cv{
     grid-column: 5 / 7;
-    grid-row: 2 / 3;
+    grid-row: 4 / 4;
     display: inline-flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 150px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
@@ -336,22 +339,19 @@ header {
     color: #fff;
     background-color: var(--crimson-red);
 }
-.available{
-    grid-column: 6 / 8;
-    grid-row: 2 / 3;
-    
+.Soft-Skills{
+    grid-column: 7 / 9;
+    grid-row: 5 / 3;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 140px;
-    height: 150px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: var(--dark-teal);
+    background: linear-gradient(735deg, var(--dark-teal), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:2px solid var(--teal);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     overflow: hidden;
-}
-.available img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
   .card {
@@ -363,16 +363,12 @@ header {
     margin: 5px;
     & h2{
         font-size: 44px;
-        background-image: linear-gradient(to right, var(--tw-gradient-stops));
-        --tw-gradient-from: #FF0000 var(--tw-gradient-from-position); /* Rojo puro */
-        --tw-gradient-to: rgba(255, 0, 0, 0) var(--tw-gradient-to-position); /* Rojo Transparente */
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-        --tw-gradient-to: rgba(255, 75, 75, 0) var(--tw-gradient-to-position); /* Rojo suave Transparente */
-        --tw-gradient-stops: var(--tw-gradient-from), #FF1744 var(--tw-gradient-via-position); /* Rojo vivo */
-        --tw-gradient-to: #B22222 var(--tw-gradient-to-position); /* Rojo oscuro */
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+        color: var(--orange-base);
+                background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 500;
+                font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
     }
     & p{
         font-size: 13px;
@@ -381,9 +377,9 @@ header {
   }
 
 
-.country {
+.avatar {
     grid-column: 7 / 9;
-    grid-row: 2 / 4;
+    grid-row: 1 / 3;
     & img{
         max-width: 100%;
         display: flex;
@@ -394,7 +390,7 @@ header {
         animation-delay: .7s;
         transition: opacity 0.5s ease;
         filter: drop-shadow(0 0 10px var(--coral-red));
-        z-index: 1;
+        z-index: 3;
     }
 }
 
@@ -452,15 +448,81 @@ header {
     border-color: white;
 }
 
-.technologies {
+.Tittle {
     grid-column: 3 / 7;
-    grid-row: 3 / 3;
+    grid-row: 4 / 2;
     text-align: center;
-    & img{
+    overflow: hidden;
+    & article .h2-big{
+        font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+        font-size: 12rem;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #cccccc;
+        color: transparent;
+        text-shadow: 1px 1px 9.5px rgba(255, 255, 255, 0.705);
+        -webkit-background-clip: text;
+           -moz-background-clip: text;
+                background-clip: text;
+        margin: 0 auto;
+        z-index: -100;
         width: 100%;
-        height: 100%;
+    }
+    & .intro{
+        width: 100%;
+        text-align: center;
+        .title {
+            margin: 0;
+            font-weight: 400;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+
+            h1 {
+                font-size: 7.25rem;
+                color: var(--orange-base);
+                background: linear-gradient(170deg, var(--light-orange), var(--orange-base));
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 700;
+                font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+                margin-left: -10px;
+                margin-top: -95px;
+                margin-bottom: -20px;
+            }
+        }
     }
 }
+.Pixel{
+    grid-column: 1 / 5;
+    grid-row: 5 / 4;
+    & .available-hire {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        margin-left: 5px;
+        width: 200px;
+        border-radius: 1.5rem;
+        background-color: #111; /* Dark background */
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+    }
+    
+    & .available-hire:hover {
+        background-color: #333; /* Slightly lighter on hover */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+    }
+    
+    & .available-hire span {
+        font-size: 1rem;
+        color: white;
+        margin-left: 10px;
+    }
+}
+
 
 .social-list {
     display: flex;
@@ -545,7 +607,67 @@ header {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* .skills-list {
+
+.folder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.folder {
+    position: relative;
+    background-color: #2b2b42;
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Crear el elemento sobresaliente en la parte superior del folder */
+.folder::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 60px;
+    height: 20px;
+    background-color: inherit;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.folder-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.browser-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.folder-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.folder-content p {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Folder 2 styling */
+.folder.green {
+    background-color: #01d293;
+}
+
+/* Añadir el sobresaliente en el folder verde */
+.folder.green::before {
+    background-color: #01d293;
+}
+
+.skills-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -555,6 +677,6 @@ header {
     display: block;
     width: 100px;
     height: 5px;
-    background: linear-gradient(to right, #ff0080, #ff8c00);
+    background: linear-gradient(to right, #ff0000e7, #ff8c00);
     margin-top: 5px;
-  } */
+  }
