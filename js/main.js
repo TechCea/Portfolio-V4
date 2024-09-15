@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     var typed = new Typed(".text", {
-        strings: ["Frontend Developer", "Web Developer", "Systems Engineer"],
+        strings: ["Frontend", "Developer", "Engineer"],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,
