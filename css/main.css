@@ -352,19 +352,19 @@ header {
 }
 .blob-header{
     position: absolute;
-    width: 400px;
-    height: 400px;
-    margin-top: -300px;
-    margin-left: -300px;
+    width: 800px;
+    height: 800px;
+    margin-top: -200px;
+    margin-left: -780px;
     animation: float2 6s ease-in-out infinite;
     z-index: 0;
 }
 .blob-blurred-header {
     position: absolute;
-    width: 400px;
-    height: 400px;
-    margin-top: -300px;
-    margin-left: -300px;
+    width: 800px;
+    height: 800px;
+    margin-top: -200px;
+    margin-left: -780px;
     filter: blur(20px);
     animation: float2 6s ease-in-out infinite;
     z-index: 0;
