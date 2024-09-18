@@ -355,14 +355,12 @@ function changeLanguage(lang) {
         es: {
             home: "Inicio",
             projects: "Proyectos",
-            about: "Sobre mí",
-            cards: "x CARDS"
+            about: "Sobre mí"
         },
         en: {
             home: "Home",
             projects: "Projects",
-            about: "About me",
-            cards: "x CARDS"
+            about: "About me"
         }
     };
 
