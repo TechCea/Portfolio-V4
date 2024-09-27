@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var typed = new Typed(".text", {
-        strings: ["Frontend", "Developer", "Engineer"],
-        typeSpeed: 100,
+        strings: ["Front End Developer", "Web Developer", "System Engineer"],
+        typeSpeed: 120,
         backSpeed: 100,
         backDelay: 1000,
         loop: true
@@ -387,3 +387,5 @@ function updateToggleButton(lang) {
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 }
+
+
