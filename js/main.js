@@ -398,7 +398,7 @@ fetch(apiUrl)
     .then(data => {
         console.log(data); // Aquí puedes manejar los datos del clima
         document.getElementById('temperature').textContent = `${data.current.temp_c}°C`;
-        document.getElementById('feels-like').textContent = `Se siente ${data.current.feelslike_c}°C`;
+        document.getElementById('feels-like').textContent = `Temperatura de ${data.current.feelslike_c}°C`;
         document.getElementById('wind').textContent = `Viento de ${data.current.wind_kph} km/h`;
         document.getElementById('location').textContent = data.location.name;
     })
