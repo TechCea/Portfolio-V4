@@ -405,8 +405,28 @@ header {
 .studies {
     grid-column: 3 / 5;
     grid-row: 1 / 2;
-
-}.cv {
+    & h3{
+        text-align: left;
+        font-size: 44px;
+        color: var(--orange-base);
+        background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 500;
+        font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    }
+    & .card {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        border-radius: 15px;
+        margin: 5px;
+        font-size: 13px;
+        color: var(--textgray);
+    }
+}
+.cv {
     grid-column: 5 / 7;
     grid-row: 4 / 4;
     display: inline-flex;
@@ -457,12 +477,13 @@ header {
 }
 
 
-.Soft-Skills{
+.weather-widget{
     grid-column: 7 / 9;
     grid-row: 5 / 3;
-    text-align: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: var(--dark-teal);
     background: linear-gradient(735deg, var(--dark-teal), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
@@ -472,16 +493,26 @@ header {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     overflow: hidden;
 }
-
-  .card {
+.weather-container {
+    position: relative;
+    background-color: var(--color-secondary-300);
+    padding: 1rem;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 10px;
-    border-radius: 15px;
-    margin: 5px;
-    & h2{
-        font-size: 44px;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.weather-header {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    color: var(--white);
+    margin-bottom: 30px;
+    & h3 {
+        margin-left: 15px;
+        font-size: 1.5rem;
         color: var(--orange-base);
         background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
         -webkit-text-fill-color: transparent;
@@ -489,12 +520,64 @@ header {
         font-weight: 500;
         font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
     }
-    & p{
-        font-size: 13px;
-        color: var(--textgray);
-    }
-  }
+}
 
+.weather-header .icon{
+    min-height: 40px;
+    min-width: 40px;
+    background-color: #121212;
+    border-radius: calc(var(--border-radius) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg{
+        height: 1.3rem;
+        fill: var(--gray);
+    }
+}
+
+.weather-info {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.temperature {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.city {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.weather-extra {
+    background-color: var(--gray);
+    border-radius: 50px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0.5rem 1rem;
+}
+
+.details {
+    text-align: center;
+}
+
+.details p:first-child {
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.details p:last-child {
+    font-size: 1rem;
+    color: var(--black);
+}
 
 .avatar {
     grid-column: 7 / 9;
@@ -702,6 +785,7 @@ header {
 .social-list {
     display: flex;
     padding: 2% 0;
+    margin-left: 5px;
     z-index: 2
 }
 
@@ -829,20 +913,6 @@ header {
     background-color: #01d293;
 }
 
-.skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .skill-bar {
-    display: block;
-    width: 100px;
-    height: 5px;
-    background: linear-gradient(to right, #ff0000e7, #ff8c00);
-    margin-top: 5px;
-  }
-
   .Projects-Container  {
     max-width: 1280px; /* Similar to the Tailwind 'container' class */
     box-sizing: border-box;
@@ -861,13 +931,21 @@ header {
     & .Banner{
         grid-column: 7 / 9;
         grid-row: 1 / 3;
+        position: relative;
+    }
+}
+    @keyframes animate {
+        0%{
+            transform: rotateX(-30deg) rotateY(0deg);
+        }
+        100%{
+            transform: rotateX(-30deg) rotateY(360deg);
+        }
     }
     & .About{
         grid-column: 7 / 9;
         grid-row: 4 / 3;
     }
-}
-
 
 .Tittle-Content{
     color: var(--textgray);
@@ -1708,6 +1786,7 @@ header {
     display: flex;
     margin-top: 50px;
     padding: 2% 0;
+    margin-left: 5px;
     z-index: 2
 }
 
@@ -1725,7 +1804,7 @@ header {
 }
 
 .social-list-about>li>p {
-    font-size: .7rem;
+    font-size: .8rem;
     color: #e6ebf193;
     font-weight: 700;
     padding-top: .5rem

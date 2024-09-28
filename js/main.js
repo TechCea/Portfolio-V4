@@ -389,3 +389,18 @@ function updateToggleButton(lang) {
 }
 
 
+const apiKey = 'c74cd50345d8426081311434242809';
+const city = 'El Salvador';
+const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
+fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Aquí puedes manejar los datos del clima
+        document.getElementById('temperature').textContent = `${data.current.temp_c}°C`;
+        document.getElementById('feels-like').textContent = `Se siente ${data.current.feelslike_c}°C`;
+        document.getElementById('wind').textContent = ` Viento de ${data.current.wind_kph} km/h`;
+        document.getElementById('location').textContent = data.location.name;
+    })
+    .catch(error => console.error('Error fetching weather data:', error));
+
