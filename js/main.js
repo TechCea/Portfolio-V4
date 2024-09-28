@@ -393,7 +393,7 @@ const apiKey = 'c74cd50345d8426081311434242809';
 const city = 'El Salvador';
 const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
-fetch(apiUrl)
+fetch("https://api.weatherapi.com/v1/current.json?key=c74cd50345d8426081311434242809&q=El%20Salvador&aqi=no")
     .then(response => response.json())
     .then(data => {
         console.log(data); // Aquí puedes manejar los datos del clima
