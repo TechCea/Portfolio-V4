@@ -1401,6 +1401,8 @@ header {
     -webkit-text-fill-color:transparent;
     -webkit-background-clip:text;
     background-clip: text;
+    font-weight: 300;
+    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
 }
 .bento-box .backend{
     background: var(--gray);
