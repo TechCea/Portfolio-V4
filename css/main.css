@@ -1902,6 +1902,7 @@ header {
     box-sizing: border-box;
     width: 100%;
     margin-top: 100px;
+    margin-bottom: 100px;
     position: relative; 
     z-index: 10; 
     text-align: left;
@@ -1917,124 +1918,74 @@ header {
 .certi span {
     color: var(--textgray);
 }
-.acordion {
+.card-container{
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 150px;
-    
-    
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 30px;
 }
-.acordion li {
-    list-style: none;
-    width: 100%;
-    margin: 10px auto;
-    padding: 15px;
-    border-radius: 8px;
-    background: var(--dark);
-    cursor: pointer;
-}
-.acordion li label {
+.card-certi {
     display: flex;
     align-items: center;
-    padding: 10px;
-    font-size: 30px;
-    font-weight: 500;
-    cursor: pointer;
-}
-label::before {
-    content: "+";
-    margin-right: 10px;
-    font-size: 25px;
-    font-weight: 600;
-}
-input[type="checkbox"] {
-    display: none;
-}
-.accordion-label {
-    background: var(--gradient-5);
-    -webkit-text-fill-color:transparent;
-    -webkit-background-clip:text;
-    background-clip: text;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
-}
-.acordion .content-2 {
-    display: flex;
-    align-items: center;
-    color: var(--white);
-    background: var(--background-dark);
-    line-height: 16px;
-    max-height: 0;
-    overflow: hidden;
-    border: solid 1.5px var(--white);
-    border-radius: 8px;
-    transition: max-height .3s ease-in-out, padding .3s ease-in-out;
-    cursor: default;
-}
-.acordion .content-2 .left {
-    width: 450px;
-    height: 200px;
-    overflow: hidden;
-}
-.acordion .content-2 .left img {
-    width: 100%;
-    height: 100%;
-}
-.acordion .content-2 .right {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
     width: 500px;
-}
-.acordion .content-2 .right h5 {
+    max-width: 500px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: fill;
+  }
+  
+  .card-content {
+    flex-grow: 1;
+  }
+  
+  .card-certi h3 {
+    margin: 0;
     font-size: 18px;
-    font-weight: 700;
-    margin: 10px 10px 20px 20px;
-    color: var(--textgray);
-}
-.acordion .content-2 .right h4 {
-    font-size: 18px;
-    font-weight: 300;
-    margin: 0px 10px 20px 20px;
-    background: var(--gradient-5);
-    -webkit-text-fill-color:transparent;
-    -webkit-background-clip:text;
-    background-clip: text;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
-}
-.acordion .content-2 .right h6 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 10px 10px 20px 20px;
-    color: var(--textgray);
-}
-.acordion .content-2 .right h5 span{
-    color: var(--light-orange);
-}
-.acordion .content-2 .right a {
-    display: inline-block;
-    padding: 10px 20px; /* Ajusta el padding según sea necesario */
-    font-size: 14px;
     color: var(--white);
-    background:linear-gradient(45deg, var(--orange-base), var(--orange-second));
+  }
+  .card-certi h5{
+    margin: 0;
+    font-size: 18px;
+    color: var(--textgray);
+  }
+  .card-certi p {
+    margin: 5px 0;
+    font-size: 18px;
+    color: #cccccc8e;
+  }
+  
+  .card-certi span {
+    margin: 5px 0;
+    color: var(--light-orange)
+  }
+  
+  .card-content a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    font-weight: medium;
+    color: var(--light-white);
     border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s, color 0.3s;
-    text-align: center; /* Centra el texto */
-    white-space: nowrap; /* Evita que el texto se desborde */
-    margin: 0px 30px 10px 20px;
+    background:linear-gradient(45deg, var(--orange-base), var(--orange-second));
+    border: none;
     cursor: pointer;
-}
-.acordion .content-2 .right a:hover {
-    box-shadow: 0 0 5px var(--otherorange), 0 0 15px var(--otherorange);
-}
-.acordion input[type="checkbox"]:checked + label + .content-2 {
-    max-height: 300px; /* Ajusta esta altura según sea necesario */
-}
-.acordion input[type="checkbox"]:checked + label::before {
-    content: "−";
-}
-.acordion .content-2 .left img:hover {
-    transform: scale(1.1); /* Efecto de zoom */
-    filter: sepia(100%) hue-rotate(90deg); /* Cambia el color de la imagen */
-}
+    transition: background 0.6s;
+  }
+  
+  .card-content a:hover {
+    box-shadow: 0 0 9px var(--otherorange), 0 0 15px var(--otherorange);
+  }
 
 
 .section-faq {
@@ -2126,7 +2077,7 @@ details[open] .icon {
 
 
 
-.contact.me{
+.contact-me{
     max-width: 1280px; /* Similar to the Tailwind 'container' class */
     margin-left: auto;
     margin-right: auto;
@@ -2151,7 +2102,9 @@ details[open] .icon {
     display: flex;
     align-items: center;
     margin-top: 50px;
-    justify-content: space-evenly;
+    margin-bottom: 80px;
+    justify-content: center;
+    gap: 50px;
     z-index: 3;
 }
 .contact-left{
