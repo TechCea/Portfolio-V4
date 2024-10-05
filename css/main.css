@@ -1812,9 +1812,8 @@ header {
 
 .social-list-about {
     display: flex;
-    margin-top: 50px;
+    margin-top: 30px;
     padding: 2% 0;
-    margin-left: 5px;
     z-index: 2
 }
 
