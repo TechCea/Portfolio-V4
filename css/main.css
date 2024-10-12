@@ -1331,29 +1331,42 @@ header {
         z-index: 1;
     }
 .close-btn {
-    
-    padding-left: 10px;
-    padding-right:10px;
-    color: var(--white); 
-    background-color: var(--orange-base); 
-    border: none; 
-    border-radius: 20%; 
-    cursor: pointer;
-    font-size: 26px; 
-    transition: background-color 0.3s ease;
+    background-color: var(--orange-base);
+    border: var(--orange-base);
+    border-radius: 4em;
+    height: 3em;
+    width: 3em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
     position: absolute; 
     top: 30px;
     right: 30px;
     cursor: pointer;
-    z-index: 999; 
+    z-index: 999;
+    &:before{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        font-family: fontAwesome;
+        content: "\f00d";
+        color: var(--black);
+        font-size: 2em;
+        transform: translate(-50%, -50%);
+      }
+      &:hover:before{
+        color: #ba3242;
+        -webkit-transition: background 350ms cubic-bezier(0.42, 0, 0.58, 1) 10ms, all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+        -moz-transition: background 350ms cubic-bezier(0.42, 0, 0.58, 1) 10ms, all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+        -o-transition: background 350ms cubic-bezier(0.42, 0, 0.58, 1) 10ms, all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+        transition: background 350ms cubic-bezier(0.42, 0, 0.58, 1) 10ms, all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+        -webkit-transform: translate(-50%, -48%) rotate(-0.25turn);
+        transform: translate(-50%, -48%) rotate(-0.25turn); /*Had to bump it b/c the dimensions are not square*/
+      }
+      &:hover{
+        background-color: var(--gray);
+      }
 }
-.close-btn:hover{
-    background-color: var(--textgray);
-    color: var(--black);
-}
-
-
-
 
 .skill{
     position:relative
