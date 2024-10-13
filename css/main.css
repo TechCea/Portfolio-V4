@@ -1595,6 +1595,52 @@ header {
     z-index: 0;
 }
 
+.blob-container3{
+    position: relative;
+}
+.blob3{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    margin-top: -870px;
+    margin-left: -100px;
+    animation: float2 6s ease-in-out infinite;
+    z-index: 0;
+}
+.blob-blurred3 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    margin-top: -870px;
+    margin-left: -100px;
+    filter: blur(10px);
+    animation: float2 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.blob-container4{
+    position: relative;
+}
+.blob4{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    margin-top: -250px;
+    margin-left: 1000px;
+    animation: float2 6s ease-in-out infinite;
+    z-index: 0;
+}
+.blob-blurred4 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    margin-top: -250px;
+    margin-left: 1000px;
+    filter: blur(10px);
+    animation: float2 6s ease-in-out infinite;
+    z-index: 0;
+}
+
 .floating-blob {
     position: absolute;
     width: 150px;
@@ -1724,7 +1770,9 @@ header {
     gap: 1rem;
     width: 100vw;
     padding: 20px 40px;
+    margin-top: 2rem;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .bento-item2 {
@@ -1827,6 +1875,7 @@ header {
     display: flex;
     margin-top: 30px;
     padding: 2% 0;
+    margin-bottom: 1rem;
     z-index: 2
 }
 
@@ -1898,6 +1947,7 @@ header {
     width: 460px;
     height: 460px;
     text-align: center;
+    z-index: 2;
   }
   
   .profile-image img {
@@ -2107,7 +2157,7 @@ details[open] .icon {
     margin-bottom: 25px;
 }
 .contactme span{
-    color: var(--orange);
+    color: var(--orange-base);
 }
 .contact-container{
     height: 100%;
@@ -2131,9 +2181,13 @@ details[open] .icon {
     gap: 20px;
 }
 .container-left-tittle h2{
-    font-weight: 600;
-    color: var(--orange);
-    font-size: 40px;
+    color: var(--orange-base);
+    background: linear-gradient(170deg, var(--light-orange), var(--orange-base));
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 45px;
     margin-bottom: 5px;
 }
 .container-left-tittle hr{
