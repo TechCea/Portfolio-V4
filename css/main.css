@@ -477,14 +477,9 @@ header {
     border-color: white;
 }
 
-
-.weather-widget{
+.scrum-card {
     grid-column: 7 / 9;
     grid-row: 5 / 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: var(--dark-teal);
     background: linear-gradient(735deg, var(--dark-teal), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
@@ -493,77 +488,57 @@ header {
     border:2px solid var(--teal);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     overflow: hidden;
-}
-.weather-container {
-    position: relative;
-    background-color: var(--color-secondary-300);
-    padding: 1rem;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.weather-header {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    color: var(--white);
-    margin-bottom: 30px;
-    & h3 {
-        margin-left: 15px;
-        font-size: 1.5rem;
-        color: var(--orange-base);
-        background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 500;
-        font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
-    }
-}
-
-.weather-header .icon{
-    min-height: 40px;
-    min-width: 40px;
-    background-color: #121212;
-    border-radius: calc(var(--border-radius) / 2);
+.scrum-card i {
+    font-size: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
-    & svg{
-        height: 1.3rem;
-        fill: var(--gray);
-        transform: rotate(-45deg);
+    width: 160px;
+    height: 160px;
+    font-size: 85px;
+    color: var(--orange-base);
+    border: 3px solid var(--orange-base);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.scrum-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--orange-base);
+    margin-bottom: 10px;
+}
+
+.scrum-text {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--textgray);
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
 
-.weather-info {
-    position: relative;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.temperature {
-    font-size: 4rem;
-    font-weight: 500;
+.rotating-gear {
+    animation: rotate 10s linear infinite; /* Gira lentamente en 10 segundos */
 }
 
 .city {
     margin-top: 10px;
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.6);
-}
-
-.weather-extra {
-    background-color: var(--gray);
-    border-radius: 50px;
-    margin-bottom: 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    padding: 0.5rem 1rem;
 }
 
 .details {
@@ -782,7 +757,32 @@ header {
         opacity: 0;
     }
 }
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    gap: 5px;
+    border-radius: 8px;
+}
 
+.tag {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    background-color: #111; /* Dark background to match the theme */
+    color: var(--textgray);
+    gap: .5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tag i {
+    font-size: 16px; /* Tamaño del ícono */
+    color: var(--orange-base); /* Color de los íconos */
+}
 
 .social-list {
     display: flex;
@@ -1646,7 +1646,27 @@ header {
     animation: circular-motion 6s ease-in-out infinite;
     z-index: 0;
 }
-
+.blob-container-5{
+    position: relative;
+    z-index: 0;
+}
+.blob-5{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-left: -200px;
+    z-index: 10;
+    animation: float-low 6s ease-in-out infinite;
+}
+.blob-blurred-5 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    margin-left: -200px;
+    filter: blur(10px);
+    z-index: 0;
+    animation: float-low 6s ease-in-out infinite;
+}
 .floating-blob {
     position: absolute;
     width: 150px;

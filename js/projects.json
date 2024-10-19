@@ -2,7 +2,7 @@
     {
       "id": 0,
       "name": ".",
-      "description": "Pokémon Game es un proyecto inspirado en el video ´Pizza Legends´ de Crew Conley. Es un pequeño juego de Pokémon que recrea la esencia de los clásicos juegos de Pokémon, similar a Pokémon Platino. Está desarrollado utilizando HTML, CSS y JavaScript, con una estética de arte pixelado creada en LibreSprite. En este juego, los jugadores pueden explorar un mundo virtual y participar en batallas de Pokémon, todo dentro de un entorno web. Es una experiencia nostálgica para los fans de la serie, combinando elementos clásicos con un diseño y desarrollo moderno.",
+      "description": "Pokémon Game es un proyecto inspirado en el video ´Pizza Legends´ de Crew Conley, que recrea la esencia de los clásicos juegos de Pokémon, similar a Pokémon Platino. Desarrollado con HTML, CSS y JavaScript, y con arte pixelado creado en LibreSprite, ofrece a los jugadores la oportunidad de explorar un mundo virtual y librar batallas de Pokémon en un entorno web.",
       "logo": "img/poke.gif",
       "backgroundImage": "img/poke.gif",
       "technologies": ["HTML5", "CSS3", "JavaScript","LibreSprite"], 
