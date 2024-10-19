@@ -673,7 +673,7 @@ header {
     }
 }
 .Pixel{
-    grid-column: 1 / 5;
+    grid-column: 5 / 9;
     grid-row: 4 / 4;
     & .content{
         display: flex;
