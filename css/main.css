@@ -27,13 +27,11 @@
     --otherorange: #FE4C42;
     --wine-red-less: #b14343;
     --textgray: #cccccc;
+    --textgray2: #cccccc;
     --darkgray: #555;
     --gray: #cccccc;
     --scroll:#090A0F;
     --green: #adff2f;
-    --tw-gradient-from-position: ;
-    --tw-gradient-via-position: ;
-    --tw-gradient-to-position: ;
     --radius-8: 8px;
     --teal: #3BA39D;
     --light-white: #F5F7FA;
@@ -60,25 +58,34 @@
     --border-width: 2px;
     --border-radius: 12px;
     --gradient: conic-gradient(from 180deg at 50% 70%, #F24141 0deg, 
-    #FE4C42 72deg, #ec2525 144deg, #FE7A36 216deg, #333A73 288deg, #50C4ED 360deg);
+    hsl(3, 99%, 63%) 72deg, #ec2525 144deg, #FE7A36 216deg, #333A73 288deg, #50C4ED 360deg);
+    --blob-color-start: rgb(255, 133, 82); /* Color del inicio del blob en modo oscuro */
+    --blob-color-end: rgb(211, 47, 47);
 }
 .light-mode {
     --white: #090A0F;
     --dark: #F2EFE5;
     --black: #ffffff;
-    --orange: #5F5BD9;
+    --orange-base: #5F5BD9;
     --otherorange: #6864e0;
+    --orange-second: #6864e0;
+    --light-orange: #5F5BD9;
+    --dark-red: #2e58ff;
     --orangep: rgb(42, 36, 212);
     --green: #06D001;
     --darkorange: #7F63A6   ;
     --darkblue: #333A73;
     --blue: #387ADF;
     --lightblue: #50C4ED;
+    --dark-red: #387ADF;
+    --crimson-red: #333A73;
     --purpledark: #591441;
     --purple: #7F63A6;
     --brown: #8C4842;
     --gray: #FFFFFF;
     --textgray: #2F3645;
+    --textgray2: #555;
+    --light-white: #5F5BD9;
     --scroll:#FFE9D0;
     --background-dark: radial-gradient(ellipse at bottom, #FFFED3 0%, #FFE9D0 100%);
     /*--background-dark: radial-gradient(ellipse at bottom, #F1F8E8 0%, #95D2B3 100%);*/
@@ -98,6 +105,8 @@
     --color: hsl(240 18% 80%);
     --border-width: 2px;
     --border-radius: 12px;
+    --blob-color-start: #5F5BD9;  /* Color del inicio del blob en modo claro */
+    --blob-color-end: #A594F9; 
 }
 body{
     display: flex;
@@ -158,7 +167,7 @@ header {
 .navbar-item a {
     text-decoration: none;
     font-size: 1rem;
-    color: white;
+    color: var(--white);
     transition: color 0.3s;
 }
 
@@ -168,7 +177,7 @@ header {
 
 
 .divider {
-    color: white;
+    color: var(--white);
     margin: 0 10px;
 }
 
@@ -202,7 +211,7 @@ header {
 }
 .theme-toggle-B i {
     font-size: 34px;              
-    color: white;                
+    color: var(--white);                
     transition: color 0.3s;       
 }
 .theme-toggle-B i:hover {
@@ -314,6 +323,8 @@ header {
     width: 100vw;
     padding-bottom: 40px;
     padding-top:20px;
+    padding-left: 5px;
+    padding-right: 5px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -464,8 +475,7 @@ header {
 .descargar-cv {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    background: #333;
-    color: var(--textgray);
+    color: var(--white);
     font-size: 1rem;
     text-decoration: none;
     border: 2px solid #555;
@@ -474,26 +484,18 @@ header {
 
 .cv .descargar-cv:hover {
     color: #fff;
-    border-color: white;
+    border-color: var(--white);
 }
 
 .scrum-card {
     grid-column: 1 / 3;
     grid-row: 5 / 3;
-    background: var(--dark-teal);
-    background: linear-gradient(735deg, var(--dark-teal), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    color: var(--textgray);
-    border:2px solid var(--teal);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
     align-items: center;
     text-align: center;
     color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .scrum-card i {
@@ -503,7 +505,7 @@ header {
     justify-content: center;
     width: 160px;
     height: 160px;
-    font-size: 85px;
+    font-size: 90px;
     color: var(--orange-base);
     border: 3px solid var(--orange-base);
     border-radius: 50%;
@@ -533,12 +535,6 @@ header {
 
 .rotating-gear {
     animation: rotate 10s linear infinite; /* Gira lentamente en 10 segundos */
-}
-
-.city {
-    margin-top: 10px;
-    font-size: 2rem;
-    color: rgba(0, 0, 0, 0.6);
 }
 
 .details {
@@ -588,7 +584,7 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     background-color: #111; /* Dark background to match the theme */
-    color: var(--textgray);
+    color: var(--gray);
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 0.875rem;
     font-weight: 500;
@@ -596,13 +592,13 @@ header {
 .contact-tag i {
     margin-right: 0.5rem;
     font-size: 1rem;
-    color: var(--textgray);
+    color: var(--gray);
 }
 .contact p {
     font-size: .8rem;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
-    color: #e6ebf1;
+    color: var(--white);
 }
 
 .contact-buttons {
@@ -615,7 +611,7 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     background-color: #333;
-    color: var(--textgray);
+    color: var(--gray);
     font-size: .7rem;
     text-decoration: none;
     border: 2px solid #555;
@@ -624,7 +620,7 @@ header {
 
 .contact-button:hover {
     color: #fff;
-    border-color: white;
+    border-color: var(--light-white);
 }
 
 .Tittle {
@@ -696,7 +692,7 @@ header {
         border-radius: 1rem;
         padding: 0.5rem 1rem;
         background-color: #111; /* Dark background to match the theme */
-        color: var(--textgray);
+        color: var(--gray);
         border: 1px solid rgba(255, 255, 255, 0.2);
         opacity: 0;
         animation: SlideLeft 1s ease forwards;
@@ -726,22 +722,7 @@ header {
         transform: translate(-50%, -50%);
         animation: pulse 2s infinite;
     }
-    & .text-content{
-        display: flex;
-        font-size: 0.7rem;
-        line-height: 1.6;
-        padding: 10px 10px 0 10px;
-        font-weight: 500;
-        text-align: left;
-        color: var(--textgray);
-    }
-    & .right {
-        text-align: right;
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--textgray);
-        width: 30%; /* Ancho ajustado del lado derecho */
-    } & img{
+    & img{
         padding-top: 5px;
         width: 165px;
         border-radius: 1rem;
@@ -774,7 +755,7 @@ header {
     font-size: 0.7rem;
     font-weight: 500;
     background-color: #111; /* Dark background to match the theme */
-    color: var(--textgray);
+    color: var(--gray);
     gap: .5rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -803,10 +784,10 @@ header {
     background-color: #0c0e10;
     font-size: 1.7rem;
     border-radius: 8px;
-    border: 2px solid #e6ebf193;
+    border: 2px solid var(--gray);
     padding: .4rem;
     display: flex;
-    color: var(--textgray);
+    color: var(--gray);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -815,7 +796,7 @@ header {
 
 .social-list>li>p {
     font-size: .7rem;
-    color: #e6ebf193;
+    color: var(--gray);
     font-weight: 700;
     padding-top: .5rem
 }
@@ -1920,21 +1901,21 @@ header {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    color: #fff;
+    color: var(--white);
 }
 .article-title-pixel {
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
-    color: #fff;
+    color: var(--white);
 }
 .icon-item2 img {
     display: block;
 }
 .article-content {
     font-size: 1rem;
-    color: #a1a1aa;
+    color: var(--textgray2);
 }
 .article-content p{
     margin-top: 5px;
@@ -1972,6 +1953,9 @@ header {
     text-align: center;
     font-size: 0.875rem;
     color: #fff;
+    & p {
+        color: var(--white);
+    }
 }
 
 .sub-info {
@@ -1994,7 +1978,7 @@ header {
     border-radius: 8px;
     padding: .5rem;
     display: flex;
-    color: var(--textgray);
+    color: var(--gray);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -2003,7 +1987,7 @@ header {
 
 .social-list-about>li>p {
     font-size: .8rem;
-    color: #e6ebf193;
+    color: var(--textgray);
     font-weight: 700;
     padding-top: .5rem
 }
@@ -2135,7 +2119,7 @@ header {
   .card-certi p {
     margin: 5px 0;
     font-size: 18px;
-    color: #cccccc8e;
+    color: #ccccccbd;
   }
   
   .card-certi span {
@@ -2149,7 +2133,7 @@ header {
     padding: 0.5rem 1rem;
     font-size: 15px;
     font-weight: medium;
-    color: var(--light-white);
+    color: var(--white);
     border-radius: 5px;
     background:linear-gradient(45deg, var(--orange-base), var(--orange-second));
     border: none;
@@ -2411,10 +2395,10 @@ footer {
     background-color: #0c0e10;
     font-size: 1.7rem;
     border-radius: 8px;
-    border: 2px solid #e6ebf193;
+    border: 2px solid var(--gray);
     padding: .4rem;
     display: flex;
-    color: var(--textgray);
+    color: var(--gray);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -2423,7 +2407,7 @@ footer {
 
 .social-list>li>p {
     font-size: .7rem;
-    color: #e6ebf193;
+    color: var(--textgray);
     font-weight: 700;
     padding-top: .5rem
 }
@@ -2437,9 +2421,9 @@ footer {
 
 .github:hover {
     rotate: 10deg;
-    color: #fff;
+    color: #71717a;
     transition: all .1s;
-    border: 2px solid #fff
+    border: 2px solid #71717a
 }
 
 .linkedin:hover {
@@ -2466,13 +2450,13 @@ footer {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 12px;
+    border-radius: 20px;
     border:1px solid rgba(255, 255, 255, 0.18);
-
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
 }
 .glass-button{
     color: var(--textgray);
-    background: linear-gradient(135deg, var(--garnet-red), var(--orange-base));
+    background: linear-gradient(135deg, var(--orange-second), var(--orange-base));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 8px;
@@ -2485,7 +2469,7 @@ footer {
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.37);
 }
 .glass3{
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
