@@ -41,24 +41,10 @@
     --pastel-orange: #F5A06A;
     --light-gray: #EDEDED;
     --background-dark: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    --gradient-1:linear-gradient(to top, lime, cyan);
-    --gradient-2:linear-gradient(to top, lime, 20%, cyan);
-    --gradient-3:linear-gradient(135deg, orange 60%, cyan);
-    --gradient-4: linear-gradient(#e66465, #9198e5);
     --gradient-6: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
     --gradient-5: linear-gradient(147deg, #F24141 0%,  #FFE53B 74%);
     --gradient-7: linear-gradient(147deg, #FF2525 35%,  #FFE53B 74%);
     --profile-picture-light: url('img/Picture1.png');
-    --pdf: #FE7A36;
-    --shadow-color: rgba(242, 65, 65, 0.4);
-    --bg: hsl(246 44% 7%);
-    --border: hsl(280 10% 50% / 1);
-    --card: hsl(237 36% 10%);
-    --color: hsl(240 18% 80%);
-    --border-width: 2px;
-    --border-radius: 12px;
-    --gradient: conic-gradient(from 180deg at 50% 70%, #F24141 0deg, 
-    hsl(3, 99%, 63%) 72deg, #ec2525 144deg, #FE7A36 216deg, #333A73 288deg, #50C4ED 360deg);
     --blob-color-start: rgb(255, 133, 82); /* Color del inicio del blob en modo oscuro */
     --blob-color-end: rgb(211, 47, 47);
 }
@@ -89,22 +75,10 @@
     --scroll:#FFE9D0;
     --background-dark: radial-gradient(ellipse at bottom, #FFFED3 0%, #FFE9D0 100%);
     /*--background-dark: radial-gradient(ellipse at bottom, #F1F8E8 0%, #95D2B3 100%);*/
-    --gradient-1: linear-gradient(0deg, #FFE53B 0%, #FF2525 74%);
-    --gradient-2: linear-gradient(0deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
-    --gradient-3:linear-gradient(180deg, #F4D03F 0%, #16A085 100%);
-    --gradient-4: linear-gradient(0deg, #21D4FD 0%, #B721FF 100%);
-    --gradient-5: linear-gradient(45deg, #141E46 0%, #FF6A88 55%, #FF99AC 100%);
     --gradient-6: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
     --gradient-7: linear-gradient(90deg, #9FACE6 35%,  #74EBD5 100%);
     --pdf: #7ED7C1;
-    --shadow-color: rgba(95, 91, 217, 0.7);
     --profile-picture-dark: url('img/Picture1-dark.png');   
-    --bg: hsl(246 44% 7%);
-    --border: hsl(280 10% 50% / 1);
-    --card: hsl(237 36% 10%);
-    --color: hsl(240 18% 80%);
-    --border-width: 2px;
-    --border-radius: 12px;
     --blob-color-start: #5F5BD9;  /* Color del inicio del blob en modo claro */
     --blob-color-end: #A594F9; 
 }
@@ -336,23 +310,6 @@ header {
     text-align: left;
     justify-content: center;
     padding: 5px;
-    /* & h3{
-        font-size: 2.25rem;
-        padding: 5px 5px 0 5px;
-        color: var(--textgray);
-        font-weight: 700;
-        margin-bottom: 10px;
-        background-image: linear-gradient(to right, var(--tw-gradient-stops));
-        --tw-gradient-from: #FF0000 var(--tw-gradient-from-position); 
-        --tw-gradient-to: rgba(255, 0, 0, 0) var(--tw-gradient-to-position); 
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-        --tw-gradient-to: rgba(255, 75, 75, 0) var(--tw-gradient-to-position); 
-        --tw-gradient-stops: var(--tw-gradient-from), #FF1744 var(--tw-gradient-via-position); 
-        --tw-gradient-to: #B22222 var(--tw-gradient-to-position); 
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    } */
 }
 .blob-container-header{
     position: relative;
@@ -564,7 +521,7 @@ header {
         animation: SlideLeft 1s ease forwards;
         animation-delay: .7s;
         transition: opacity 0.5s ease;
-        filter: drop-shadow(0 0 10px var(--coral-red));
+        filter: drop-shadow(0 0 20px var(--orange-base));
         z-index: 3;
     }
 }
@@ -633,9 +590,9 @@ header {
         font-size: 12rem;
         text-transform: uppercase;
         text-align: center;
-        background-color: #cccccc;
+        background-color: var(--textgray);
         color: transparent;
-        text-shadow: 1px 1px 9.5px rgba(255, 255, 255, 0.705);
+        text-shadow: 1px 1px 9.5px var(--textgray);
         -webkit-background-clip: text;
            -moz-background-clip: text;
                 background-clip: text;
@@ -2455,7 +2412,6 @@ footer {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
 }
 .glass-button{
-    color: var(--textgray);
     background: linear-gradient(135deg, var(--orange-second), var(--orange-base));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);

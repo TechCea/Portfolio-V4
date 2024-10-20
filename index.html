@@ -51,12 +51,12 @@
             <div class="blob-header">
                 <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
                     <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color: rgb(255, 133, 82);"></stop>
-                        <stop offset="100%" style="stop-color: rgb(211, 47, 47);"></stop>
-                      </linearGradient>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color: var(--blob-color-start);"></stop>
+                            <stop offset="100%" style="stop-color: var(--blob-color-end);"></stop>
+                        </linearGradient>
                     </defs>
-                    <path id="blob" fill="url(#gradient)">
+                    <path id="blob" fill="url(#gradient1)">
                         <animate attributeName="d"
                             dur="14s"
                             repeatCount="indefinite"
@@ -82,12 +82,12 @@
                 <div class="blob-blurred-header">
                     <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
                         <defs>
-                          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" style="stop-color: rgb(255, 133, 82);"></stop>
-                            <stop offset="100%" style="stop-color: rgb(211, 47, 47);"></stop>
-                          </linearGradient>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color: var(--blob-color-start);"></stop>
+                                <stop offset="100%" style="stop-color: var(--blob-color-end);"></stop>
+                            </linearGradient>
                         </defs>
-                        <path id="blob" fill="url(#gradient)">
+                        <path id="blob" fill="url(#gradient1)">
                             <animate attributeName="d"
                                 dur="14s"
                                 repeatCount="indefinite"
