@@ -444,7 +444,8 @@ header {
 .descargar-cv {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    color: var(--white);
+    background-color: #333;
+    color: var(--gray);
     font-size: 1rem;
     text-decoration: none;
     border: 2px solid #555;
@@ -457,7 +458,7 @@ header {
 
 .cv .descargar-cv:hover {
     color: #fff;
-    border-color: var(--white);
+    border-color: var(--light-white);
 }
 
 .scrum-card {
@@ -2515,11 +2516,11 @@ footer {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
 }
 .glass-button{
-    background: linear-gradient(135deg, var(--orange-second), var(--orange-base));
+    background-color: #333;
+    color: var(--gray);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 8px;
-    border:1px solid var(--textgray);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 .glass2{
