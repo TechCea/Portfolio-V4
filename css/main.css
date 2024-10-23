@@ -1044,7 +1044,6 @@ header {
           grid-auto-rows: minmax(135px,auto);
           gap: 15px;
           position: relative;
-          cursor: pointer;
           z-index: 2;
           animation: appear linear;
           animation-timeline: view();
@@ -1060,6 +1059,7 @@ header {
           justify-content: center;
           box-shadow: rgba(0, 0, 0, 0.15) 4px 4px 15px;
           transition: 300ms;
+          cursor: pointer;
           position: relative;
           
       }
