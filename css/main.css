@@ -2386,7 +2386,7 @@ details[open] .icon {
     font-size: 16px;
     border: none;
     border-radius: 20px;
-    border: 2px solid var(--orange-second);
+    border: 2px solid var(--orange-base);
     background: var(--dark);
     color: var(--textgray);
     cursor: pointer;
@@ -2397,7 +2397,7 @@ details[open] .icon {
 }
 .contact-left button:hover{
     transform: translateY(-5px);
-    box-shadow: 0 0 5px var(--otherorange), 0 0 15px var(--otherorange);
+    box-shadow: 0 0 5px var(--orange-base), 0 0 15px var(--orange-base);
 }
 .contact-right img{
     margin-left: 30px;
