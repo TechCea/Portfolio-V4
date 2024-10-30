@@ -1599,17 +1599,17 @@ header {
 }
 .blob{
     position: absolute;
-    width: 500px;
-    height: 500px;
-    margin-left: -100px;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
     z-index: 10;
     animation: float-low 6s ease-in-out infinite;
 }
 .blob-blurred {
     position: absolute;
-    width: 500px;
-    height: 500px;
-    margin-left: -100px;
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
     filter: blur(10px);
     z-index: 0;
     animation: float-low 6s ease-in-out infinite;
@@ -1623,19 +1623,19 @@ header {
 }
 .blob2{
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     margin-top: 700px;
-    margin-left: 900px;
+    margin-left: 1000px;
     animation: float2 6s ease-in-out infinite;
     z-index: 10;
 }
 .blob-blurred2 {
     position: absolute;
-    width: 400px;
-    height: 400px;
+    width: 200px;
+    height: 200px;
     margin-top: 700px;
-    margin-left: 900px;
+    margin-left: 1000px;
     filter: blur(10px);
     animation: float2 6s ease-in-out infinite;
     z-index: 0;

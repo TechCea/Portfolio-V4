@@ -30,12 +30,12 @@
     },
     {
       "id": 3,
-      "name": "🚧 Aplicación en Desarrollo 🚧",
-      "description": "Esta aplicación está en proceso de construcción. Algunas funcionalidades pueden no estar disponibles o aún en fase de pruebas. ¡Gracias por tu comprensión y paciencia!",
-      "logo": "img/desarrolo.gif",
+      "name": "Yu-Gi-Oh! Card Explorer",
+      "description": "Aplicación de búsqueda y consulta de cartas de Yu-Gi-Oh! que permite a los usuarios explorar el extenso catálogo de cartas con filtros avanzados y ver detalles de cada carta en tiempo real. Desarrollada utilizando la API de YGOProDeck para obtener información completa sobre cada carta y brindar una experiencia única a los fans del juego.",
+      "logo": "img/Yugi.jpg",
       "technologies": ["HTML5", "CSS3", "JavaScript","Laravel"],
-      "link": "",
-      "github": "https://github.com/usuario/capi-beads"
+      "link": "https://proyecto-c.vercel.app/",
+      "github": "https://github.com/TechCea/ProyectoC"
     },
     {
       "id": 4,
