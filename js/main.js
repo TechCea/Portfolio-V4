@@ -391,3 +391,34 @@ function updateToggleButton(lang) {
 
 
 
+const openBtn = document.querySelector(".openMenu");
+const closeBtn = document.querySelector(".closeMenu");
+const navbar = document.querySelector(".navbar");
+
+function ajustarVisibilidadMenu() {
+    if (window.innerWidth > 768) {
+        navbar.classList.remove("visible", "hidden");
+        openBtn.style.display = "none";
+    } else {
+        navbar.classList.add("hidden");
+        navbar.classList.remove("visible");
+        openBtn.style.display = "block";
+    }
+}
+
+ajustarVisibilidadMenu();
+
+openBtn.addEventListener("click", () => {
+    navbar.classList.remove("hidden");
+    navbar.classList.add("visible");
+    openBtn.style.display = "none";
+});
+
+closeBtn.addEventListener("click", () => {
+    navbar.classList.add("hidden");
+    navbar.classList.remove("visible");
+    openBtn.style.display = "block";
+});
+
+window.addEventListener("resize", ajustarVisibilidadMenu);
+
