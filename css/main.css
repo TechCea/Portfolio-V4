@@ -1751,8 +1751,8 @@ header {
     position: absolute;
     width: 10vw;
     height: 10vw;
-    top: 140vh;
-    left: 80vw;
+    top: 120vh;
+    left: 85vw;
     animation: float 6s ease-in-out infinite;
     display: inline-block;
     z-index: -10;
@@ -1761,8 +1761,8 @@ header {
     position: absolute;
     width: 10vw;
     height: 10vw;
-    top: 140vh;
-    left: 80vw;
+    top: 120vh;
+    left: 85vw;
     filter: blur(10px);
     animation: float 6s ease-in-out infinite;
     display: inline-block;
