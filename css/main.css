@@ -4,7 +4,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',"Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition-property: all;
     transition-duration: .6s;
     transition-timing-function: ease;
@@ -672,7 +672,7 @@ header {
     text-align: center;
     overflow: hidden;
     & article .h2-big{
-        font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+        font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
         font-size: 12rem;
         text-transform: uppercase;
         text-align: center;
@@ -703,9 +703,9 @@ header {
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 font-weight: 700;
-                font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+                font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
                 margin-left: -10px;
-                margin-top: -95px;
+                margin-top: -135px;
                 margin-bottom: -20px;
                 opacity: 0;
                 animation: SlideBottom 1s ease forwards;
