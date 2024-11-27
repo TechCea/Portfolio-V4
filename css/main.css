@@ -388,7 +388,7 @@ header {
     transition: opacity 0.5s ease;
     & h1{
         font-weight: 500;
-        font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+        font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
         font-size:  2.2rem;
         color: var(--white);
         padding: 5px 5px 10px 5px;
@@ -408,7 +408,7 @@ header {
     }
     & span{
         font-weight: 500;
-        font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+        font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
         font-size:  1.5rem;
         color: var(--orange-base);
         background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
@@ -1002,7 +1002,7 @@ header {
         text-align: center;
         overflow: hidden;
         & article .h2-big{
-            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
             font-size: 10rem;      
         }
         & .intro{
@@ -1043,7 +1043,7 @@ header {
         text-align: center;
         overflow: hidden;
         & article .h2-big{
-            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
             font-size: 7.4rem;      
         }
         & .intro{
@@ -1072,7 +1072,7 @@ header {
         text-align: center;
         overflow: hidden;
         & article .h2-big{
-            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
             font-size: 6rem;      
         }
         & .intro{
@@ -1161,7 +1161,7 @@ header {
         position: relative;
         & h1{
             font-weight: 500;
-            font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+            font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
             font-size:  2.5rem;
             color: var(--orange-base);
             background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
@@ -1176,7 +1176,7 @@ header {
         grid-row: 2 / 4;
         & h3{
             font-weight: 500;
-            font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+            font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
             font-size:  1.5rem;
             color: var(--white);
             padding: 5px 5px 5px 5px;
@@ -1202,7 +1202,7 @@ header {
     line-height: 1;
     text-align: center;
     margin-bottom: 50px ;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
 }
 .Tittle-Content span{
     color: var(--orange-base);
@@ -1210,7 +1210,7 @@ header {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 500;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
     justify-content: center;
     text-align: center;
 }
@@ -1642,7 +1642,7 @@ header {
     -webkit-background-clip:text;
     background-clip: text;
     font-weight: 300;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
 }
 .bento-box .backend{
     background: var(--gray);
@@ -2047,7 +2047,7 @@ header {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 500;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
     font-size: 3rem;
     margin: 0 0 1rem 0;
 }
@@ -2266,7 +2266,7 @@ header {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 500;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
     font-size: 3.5rem;
     margin: 0 0 1rem 0;
     padding: 5px 5px 0 5px;
@@ -2523,7 +2523,7 @@ details[open] .icon {
     background: linear-gradient(170deg, var(--light-orange), var(--orange-base));
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+    font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 45px;
     margin-bottom: 5px;
