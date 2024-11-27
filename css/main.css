@@ -97,7 +97,7 @@ body::-webkit-scrollbar{
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    width: 10px;
+    width: 7px;
 }
 body::-webkit-scrollbar-thumb{
     background: linear-gradient(170deg, var(--light-orange), var(--orange-base));
@@ -229,7 +229,7 @@ header {
     position: fixed;
     top: 20px;
     right: 20px;
-    color: #5f17ce;
+    color: var(--orange-base);
     z-index: 9999;
     display: none;
     cursor: pointer;
@@ -241,7 +241,7 @@ header {
     top: 20px;
     right: 20px;
     font-size: 1.5rem;
-    color: #5F17CE;
+    color: var(--orange-base);
     cursor: pointer;
     display: none;
 }
@@ -348,30 +348,24 @@ header {
     }
 }
 
-.main-container {
-    position: relative; /* Similar to 'relative' in Tailwind */
-    max-width: 1280px; /* Similar to the Tailwind 'container' class */
-    box-sizing: border-box;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    z-index: 10; /* Similar to 'z-10' in Tailwind */
-    border-radius: 2rem;
-    text-align: center;
-}
+
 .bento-container {
     position: relative;
     max-width: 1280px;
+    justify-content: center; /* Centrar horizontalmente */
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     grid-auto-rows: 150px;
     gap: 1rem;
+    margin: 0 auto;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    margin-top: 100px;
     width: 100vw;
     padding-bottom: 40px;
     padding-top:20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -395,7 +389,7 @@ header {
     & h1{
         font-weight: 500;
         font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
-        font-size:  2.5rem;
+        font-size:  2.2rem;
         color: var(--white);
         padding: 5px 5px 10px 5px;
         align-items: left;
@@ -539,10 +533,6 @@ header {
     border: 3px solid var(--orange-base);
     border-radius: 50%;
     margin-bottom: 1rem;
-    opacity: 0;
-    animation: SlideTop 1s ease forwards;
-    animation-delay: .9s;
-    transition: opacity 0.5s ease;
 }
 
 .scrum-title {
@@ -853,7 +843,7 @@ header {
 .social-list {
     display: flex;
     padding: 2% 0;
-    margin-left: 5px;
+    justify-content: center;
     z-index: 2
 }
 
@@ -946,8 +936,208 @@ header {
     transition: all .1s;
     border: 2px solid #0a66c2
 }
+@media (max-width: 1280px) {
+    .bento-container {
+        grid-template-columns: repeat(6, 1fr); /* Reducir a 6 columnas */
+        grid-auto-rows: 180px; /* Ajustar altura de las filas */
+    }
 
+    .header {
+        grid-column: 1 / 4; /* Ajustar posición */
+        grid-row: 1 / 2;
+    }
 
+    .studies, .cv {
+        grid-column: 1 / 4;
+    }
+
+    .avatar, .contact {
+        grid-column: 4 / 7;
+    }
+}
+@media (max-width: 768px) {
+    .bento-container {
+        max-width: 600px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        margin-top: 0 auto; /* Ajustar automáticamente la altura */
+    }
+    .header {
+        grid-row: 2;
+        grid-column: 1 / 3;
+        text-align: center;
+    }
+    .studies {
+        grid-row: 3;
+        grid-column: 1 / 3;
+    }
+    .social-links{
+        grid-row: 4;
+        grid-column: 1 / 3;
+        justify-content: center;
+        gap: 10px;
+    }
+    .cv{
+        grid-row: 9;
+        grid-column: 1 / 3;
+        padding: 100px;
+    }
+    
+    .scrum-card{
+        grid-row: 6;
+        grid-column: 1 / 3;
+    }
+    .avatar{
+        grid-row: 5;
+        grid-column: 1 / 3;
+    }
+    .contact{
+        padding: 15px;
+        grid-row: 7;
+        grid-column: 1 / 3;
+    }
+    .Tittle{
+        grid-row: 1;
+        grid-column: 1 / 3;
+        text-align: center;
+        overflow: hidden;
+        & article .h2-big{
+            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-size: 10rem;      
+        }
+        & .intro{
+            width: 100%;
+            text-align: center;
+            .title {
+                margin: 0;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                h1 {
+                    font-size: 6.25rem;
+                }
+            }
+        }
+    }
+    .Pixel{
+        grid-row: 8;
+        grid-column: 1 / 3;
+    }
+    .cv .descargar-cv {
+        font-size: 1.3rem; /* Reducir el tamaño del texto */
+        padding: 0.5rem 1rem;
+    }
+
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+@media (max-width: 425px){
+    .Tittle{
+        grid-row: 1;
+        grid-column: 1 / 3;
+        text-align: center;
+        overflow: hidden;
+        & article .h2-big{
+            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-size: 7.4rem;      
+        }
+        & .intro{
+            width: 100%;
+            text-align: center;
+            .title {
+                margin: 0;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                h1 {
+                    margin-top: -70px;
+                    font-size: 5rem;
+                }
+            }
+        }
+    }
+}
+/* Para pantallas aún más pequeñas, como 320px */
+@media (max-width: 375px) {
+
+    .Tittle{
+        grid-row: 1;
+        grid-column: 1 / 3;
+        text-align: center;
+        overflow: hidden;
+        & article .h2-big{
+            font-family: "Thunder", Impact, 'Arial Narrow Bold', sans-serif;
+            font-size: 6rem;      
+        }
+        & .intro{
+            width: 100%;
+            text-align: center;
+            .title {
+                margin: 0;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+                font-size: 2rem;
+                h1 {
+                    margin-top: -70px;
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+    .Pixel{
+        display: flex;
+        flex-direction: column;
+        grid-row: 8;
+        grid-column: 1 / 3;
+    }
+    .Pixel {
+        grid-column: 1 / 3; /* Cambiar a una columna completa en pantallas pequeñas */
+        grid-row: auto; /* Ajustar a filas automáticamente */
+    }
+
+    .Pixel .content {
+        flex-direction: column; /* Cambiar a columna */
+        align-items: center; /* Centrar los elementos */
+    }
+
+    .Pixel img {
+        width: 100%; /* Hacer que la imagen ocupe el ancho completo */
+        max-width: 200px; /* Limitar el tamaño máximo de la imagen */
+        margin-bottom: 15px; /* Espacio entre la imagen y los tags */
+    }
+
+    .Pixel .status {
+        margin-top: 10px; /* Separar un poco más los tags */
+    }
+
+    .Pixel .left {
+        width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+        margin-left: 0; /* Eliminar margen izquierdo en pantallas pequeñas */
+        align-items: center;
+        justify-content: center;
+    }
+    .Pixel .tags-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .cv .descargar-cv {
+        font-size: 1.1rem; /* Reducir el tamaño del texto */
+        padding: 0.5rem 1rem;
+    }
+}
+@media (max-width: 375px) {
+    .cv .descargar-cv {
+        font-size: 1rem;
+        width: 135px; /* Reducir el tamaño del texto */
+        padding: 0.5rem 1rem;
+    }
+}
 
   .Projects-Container  {
     max-width: 1280px; /* Similar to the Tailwind 'container' class */

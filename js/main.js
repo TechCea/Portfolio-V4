@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     var typed = new Typed(".text", {
-        strings: ["Front End Developer", "Web Developer", "System Engineer"],
-        typeSpeed: 120,
-        backSpeed: 100,
+        strings: ["Discover my projects", "Discover my skills", "in web development."],
+        typeSpeed: 50,
+        backSpeed: 50,
         backDelay: 1000,
         loop: true
     });
@@ -421,4 +421,5 @@ closeBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", ajustarVisibilidadMenu);
+
 
