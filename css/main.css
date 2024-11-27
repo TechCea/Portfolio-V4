@@ -429,13 +429,13 @@ header {
     transition: opacity 0.5s ease;
     & h3{
         text-align: left;
-        font-size: 3rem;
+        font-size: 2.6rem;
         color: var(--orange-base);
         background: linear-gradient(170deg, var(--light-orange), var(--dark-red));
         -webkit-text-fill-color: transparent;
         background-clip: text;
         font-weight: 500;
-        font-family: "Thunder","Impact", Arial, Helvetica, sans-serif;
+        font-family: 'Anton', Impact, Arial, Helvetica, sans-serif;
     }
     & .card {
         display: flex;
