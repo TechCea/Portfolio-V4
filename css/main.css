@@ -2883,7 +2883,10 @@ footer {
         margin: 10px;
         width: 100%;
       }
-      
+      .icon {
+        width: 1rem;
+        height: 1rem;
+    }  
 
 }
 @media (max-width: 425px){
@@ -2943,6 +2946,81 @@ footer {
     .Twitter{
         font-size: 1.2rem;
     }
+    
+
+.article-faq {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.faq-container {
+    position: relative;
+    width: 95%;
+    margin-top: 40px;
+}
+
+@keyframes translate {
+    to {
+        transform: translate(20rem,-30rem);
+        rotate: 0deg
+    }
+}
+
+details {
+    border-radius: 20px;
+    color: var(--textgray);
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+@keyframes left-reveal {
+    0% {
+        opacity: 0;
+        translate: 10rem 0
+    }
+}
+
+details summary {
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    font-weight: 500
+}
+
+summary+p {
+    padding: 1.5rem;
+    font-weight: 500;
+    padding-top: 0;
+    font-size: 1rem
+}
+
+details[open] {
+    display: block;
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+}
+
+.icon {
+    transition: transform 0.5s ease;
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    margin-left: 5px;
+    margin-right: 10px;
+    border-right: 4px solid var(--light-orange);
+    border-bottom: 4px solid var(--white);
+    transform: rotate(45deg); /* Flecha hacia abajo */
+}
+
+details[open] .icon {
+    transform: rotate(-135deg); /* Flecha hacia arriba */
+}
 }
 /* Para pantallas aún más pequeñas, como 320px */
 @media (max-width: 375px) {
