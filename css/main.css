@@ -2726,7 +2726,7 @@ footer {
     }
     
     .content-wrapper h2 {
-        font-weight: bold;
+        font-weight: 500;
         font-size: 2rem;
         margin: 0 0 1rem 0;
         color: var(--orange-base);
