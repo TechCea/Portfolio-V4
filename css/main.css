@@ -3022,6 +3022,13 @@ details[open] {
 details[open] .icon {
     transform: rotate(-135deg); /* Flecha hacia arriba */
 }
+.profile-image {
+    margin: 40px;
+    position: relative;
+    width: 350px;
+    text-align: center;
+    z-index: 2;
+  }
 
 }
 /* Para pantallas aún más pequeñas, como 320px */
