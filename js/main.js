@@ -110,7 +110,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
         toggle.addEventListener('click', toggleTheme);
     });
-    let currentLanguage = 'es'; // Idioma inicial
+
+// Obtener el idioma guardado en localStorage (si existe), si no, usar 'en' por defecto
+let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
 
 // Función para cargar proyectos en base al idioma
 function loadProjects(language) {
@@ -127,13 +129,14 @@ function loadProjects(language) {
         .catch(error => console.error('Error en la operación de fetch:', error));
 }
 
-// Llamar a la función al cargar la página
+// Llamar a la función al cargar la página con el idioma actual
 loadProjects(currentLanguage);
 
 // Event listeners para cambiar idioma
 document.getElementById('btn-es').addEventListener('click', () => {
     if (currentLanguage !== 'es') {
         currentLanguage = 'es';
+        localStorage.setItem('selectedLanguage', currentLanguage); // Guardar el idioma seleccionado en localStorage
         loadProjects(currentLanguage);
     }
 });
@@ -141,6 +144,7 @@ document.getElementById('btn-es').addEventListener('click', () => {
 document.getElementById('btn-en').addEventListener('click', () => {
     if (currentLanguage !== 'en') {
         currentLanguage = 'en';
+        localStorage.setItem('selectedLanguage', currentLanguage); // Guardar el idioma seleccionado en localStorage
         loadProjects(currentLanguage);
     }
 });
@@ -281,6 +285,7 @@ function portfolio(arrayData) {
 }
 
 
+
     // Seleccionar todos los elementos con la clase copyEmailButton
 const emailButtons = document.querySelectorAll('.copyEmailButton');
 
@@ -396,7 +401,7 @@ function changeLanguage(lang) {
             "banner-text": "¡Te presento mi espacio creativo!",
             "about-title": "<span class='emoji'>👈</span> Proyectos en los que estoy Trabajando",
             "about-description": "A lo largo de mi carrera, he estado desarrollando proyectos innovadores y desafiantes, los cuales puedes explorar para conocer más sobre mi trabajo y las soluciones que he creado.<br><strong>¡Descubre en qué estoy trabajando ahora y cómo estos proyectos están dando vida a mis ideas!</strong>",
-            "skills-title": "My <span>Skills</span>",
+            "skills-title": "Mis <span>Habilidades</span>",
             "DataBase": "Base de Datos",
             "Tools": "Herramientas",
             "wrapper-header": "¿Tienes algún proyecto?",
@@ -494,7 +499,7 @@ function changeLanguage(lang) {
             "banner-text": "Welcome to my creative space!",
             "about-title": "<span class='emoji'>👈</span> Projects I'm Working On",
             "about-description": "Throughout my career, I've been developing innovative and challenging projects that you can explore to learn more about my work and the solutions I've created.<br><strong>Discover what I'm working on now and how these projects are bringing my ideas to life!</strong>",
-            "skills-title": "Mis <span>Habilidades</span>",
+            "skills-title": "My <span>Skills</span>",
             "DataBase": "DataBase",
             "Tools": "Tools",
             "wrapper-header": "Do you have a project?",
