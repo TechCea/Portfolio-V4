@@ -110,160 +110,175 @@ document.addEventListener("DOMContentLoaded", function () {
     
         toggle.addEventListener('click', toggleTheme);
     });
-    
-fetch('./js/projects.json')
+    let currentLanguage = 'es'; // Idioma inicial
+
+// Función para cargar proyectos en base al idioma
+function loadProjects(language) {
+    fetch(`./js/projects_${language}.json`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
+                throw new Error('Error al cargar el archivo JSON: ' + response.statusText);
             }
             return response.json();
         })
-        .then(data => buildPortfolio(data))
-        .catch(error => console.error('There has been a problem with your fetch operation:', error));
+        .then(data => {
+            buildPortfolio(data);
+        })
+        .catch(error => console.error('Error en la operación de fetch:', error));
+}
 
-    function buildPortfolio(projectsArr) {
-        console.log('projectsArr:', projectsArr);
-        let projects = [...projectsArr];
-        projects.sort(function (a, b) {
-            return b.rating - a.rating;
-        });
+// Llamar a la función al cargar la página
+loadProjects(currentLanguage);
 
-        projects = projects.slice(0, 6);
+// Event listeners para cambiar idioma
+document.getElementById('btn-es').addEventListener('click', () => {
+    if (currentLanguage !== 'es') {
+        currentLanguage = 'es';
+        loadProjects(currentLanguage);
+    }
+});
 
-        let container = document.querySelector(".elements");
-        console.log('container:', container);
+document.getElementById('btn-en').addEventListener('click', () => {
+    if (currentLanguage !== 'en') {
+        currentLanguage = 'en';
+        loadProjects(currentLanguage);
+    }
+});
 
-        for (const project of projects) {
-            let element = document.createElement("div");
-            element.classList.add("element");
-            element.classList.add("a");
-            element.classList.add("glass");
-            element.setAttribute("dataID", project.id);
-            let img = document.createElement("img");
-            img.src = project.logo;
-            element.appendChild(img);
-            container.appendChild(element);
-            console.log('Added element:', element);
-            
-        }
+// Construir el portafolio
+function buildPortfolio(projectsArr) {
+    let container = document.querySelector(".elements");
+    container.innerHTML = ''; // Limpiar el contenido anterior
 
-        portfolio(projectsArr);
+    for (const project of projectsArr) {
+        let element = document.createElement("div");
+        element.classList.add("element", "a", "glass");
+        element.setAttribute("dataID", project.id);
+
+        let img = document.createElement("img");
+        img.src = project.logo;
+        element.appendChild(img);
+        container.appendChild(element);
     }
 
-    function portfolio(arrayData) {
-        let elements = [...document.getElementsByClassName('element')];
-        elements.forEach(function (e) {
-            e.addEventListener("click", () => {
-                let banner = document.createElement("div");
-                if (parseInt(e.getAttribute("dataID")) === 1) {
-                    banner.classList.add("banner-custom");
-                } else if (parseInt(e.getAttribute("dataID")) === 0) {  // Cambia '2' por el ID que desees
-                    banner.classList.add("banner-custom-2");
-                }
-                let width = e.offsetWidth;
-                let height = e.offsetHeight;
-                let x = e.offsetTop;
-                let y = e.offsetLeft;
+    portfolio(projectsArr);
+}
 
-                banner.style.top = x + "px";
-                banner.style.left = y + "px";
-                banner.style.width = width + 'px';
-                banner.style.height = height + 'px';
-                banner.style.padding = '0';
-                banner.classList.add("banner");
+// Configurar eventos de clic en los proyectos
+function portfolio(arrayData) {
+    let elements = [...document.getElementsByClassName('element')];
+    elements.forEach(function (e) {
+        e.addEventListener("click", () => {
+            let banner = document.createElement("div");
+            if (parseInt(e.getAttribute("dataID")) === 1) {
+                banner.classList.add("banner-custom");
+            } else if (parseInt(e.getAttribute("dataID")) === 0) {
+                banner.classList.add("banner-custom-2");
+            }
 
-                let content = document.createElement("div");
-                content.classList.add("content");
+            let width = e.offsetWidth;
+            let height = e.offsetHeight;
+            let x = e.offsetTop;
+            let y = e.offsetLeft;
 
-                let closeButton = document.createElement("button");
-                closeButton.classList.add("close-btn");
-                closeButton.innerHTML = "&times;";
-                closeButton.addEventListener("click", goBackElements);
-                content.appendChild(closeButton);
+            banner.style.top = x + "px";
+            banner.style.left = y + "px";
+            banner.style.width = width + 'px';
+            banner.style.height = height + 'px';
+            banner.style.padding = '0';
+            banner.classList.add("banner");
 
-                let h2 = document.createElement("h3");
-                h2.innerText = arrayData[e.getAttribute("dataID")].name;
-                content.appendChild(h2);
-                let p = document.createElement("p");
-                p.innerHTML = arrayData[e.getAttribute("dataID")].description;
-                content.appendChild(p);
-                let tech = document.createElement("div");
-                tech.classList.add("skills-used");
-                const arrayTech = arrayData[e.getAttribute("dataID")].technologies;
-                for (const el of arrayTech) {
-                    let skill = document.createElement("div");
-                    skill.classList.add("skill");
-                    let img = document.createElement("img");
-                    img.src = "img/icons/" + el + '.svg';
-                    let title = document.createElement("span");
-                    title.textContent = el;
-                    skill.appendChild(img);
-                    skill.appendChild(title);
-                    tech.appendChild(skill);
-                }
-                content.appendChild(tech);
+            let content = document.createElement("div");
+            content.classList.add("content");
 
-                // Crear el contenedor de botones
-                let buttonContainer = document.createElement("div");
-                buttonContainer.classList.add("button-container");
+            let closeButton = document.createElement("button");
+            closeButton.classList.add("close-btn");
+            closeButton.innerHTML = "&times;";
+            closeButton.addEventListener("click", goBackElements);
+            content.appendChild(closeButton);
 
-                // Añadir botón "Take a look"
-                let link = document.createElement("a");
-                link.classList.add("link", "btn-primary");
-                link.href = arrayData[e.getAttribute("dataID")].link || "#"; // Puedes agregar un enlace por defecto si no hay enlace
-                link.setAttribute("target", "_blank");
-                link.innerText = "Take a look";
-                buttonContainer.appendChild(link);
+            let h2 = document.createElement("h3");
+            h2.innerText = arrayData[e.getAttribute("dataID")].name;
+            content.appendChild(h2);
 
-                // Añadir botón de GitHub
-                let githubLink = document.createElement("a");
-                githubLink.classList.add("link", "btn-secondary");
-                githubLink.href = arrayData[e.getAttribute("dataID")].github || "#"; // Puedes agregar un enlace por defecto si no hay GitHub
-                githubLink.setAttribute("target", "_blank");
+            let p = document.createElement("p");
+            p.innerHTML = arrayData[e.getAttribute("dataID")].description;
+            content.appendChild(p);
 
-                let githubIcon = document.createElement("img");
-                githubIcon.src = "img/icons/GitHub.svg";
-                githubIcon.alt = "GitHub";
-                githubIcon.style.width = "44px";
-                githubIcon.style.height = "44px";
-                githubLink.appendChild(githubIcon);
+            let tech = document.createElement("div");
+            tech.classList.add("skills-used");
+            const arrayTech = arrayData[e.getAttribute("dataID")].technologies;
+            for (const el of arrayTech) {
+                let skill = document.createElement("div");
+                skill.classList.add("skill");
+                let img = document.createElement("img");
+                img.src = "img/icons/" + el + '.svg';
+                let title = document.createElement("span");
+                title.textContent = el;
+                skill.appendChild(img);
+                skill.appendChild(title);
+                tech.appendChild(skill);
+            }
+            content.appendChild(tech);
 
-                buttonContainer.appendChild(githubLink);
+            // Botones de acciones
+            let buttonContainer = document.createElement("div");
+            buttonContainer.classList.add("button-container");
 
-                content.appendChild(buttonContainer);
+            let link = document.createElement("a");
+            link.classList.add("link", "btn-primary");
+            link.href = arrayData[e.getAttribute("dataID")].link || "#";
+            link.setAttribute("target", "_blank");
+            link.innerText = currentLanguage === 'es' ? "Ver proyecto" : "Take a look";
+            buttonContainer.appendChild(link);
 
-                let spacingMobile = document.createElement("span");
-                spacingMobile.classList.add('separatorMobile');
-                content.appendChild(spacingMobile);
+            let githubLink = document.createElement("a");
+            githubLink.classList.add("link", "btn-secondary");
+            githubLink.href = arrayData[e.getAttribute("dataID")].github || "#";
+            githubLink.setAttribute("target", "_blank");
 
-                banner.appendChild(content);
-                document.querySelector('.elements').appendChild(banner);
+            let githubIcon = document.createElement("img");
+            githubIcon.src = "img/icons/GitHub.svg";
+            githubIcon.alt = "GitHub";
+            githubIcon.style.width = "44px";
+            githubIcon.style.height = "44px";
+            githubLink.appendChild(githubIcon);
 
-                if (arrayData[e.getAttribute("dataID")].backgroundImage) {
-                    banner.style.backgroundImage = `url(${arrayData[e.getAttribute("dataID")].backgroundImage})`;
-                    banner.style.backgroundSize = 'cover';
-                    banner.style.backgroundPosition = 'center';
-                    banner.classList.add("banner-with-bg");
-                } else {
-                    banner.style.backgroundColor = arrayData[e.getAttribute("dataID")].backgroundColor || '#ffffff';
-                }
+            buttonContainer.appendChild(githubLink);
+            content.appendChild(buttonContainer);
 
-                banner.classList.add("banner-expanded");
+            let spacingMobile = document.createElement("span");
+            spacingMobile.classList.add('separatorMobile');
+            content.appendChild(spacingMobile);
 
-                setTimeout(() => {
-                    content.classList.add("visible");
-                }, 1200);
-            });
-        });
+            banner.appendChild(content);
+            document.querySelector('.elements').appendChild(banner);
 
-        function goBackElements() {
-            let banner = document.querySelector('.banner');
-            banner.classList.add("hide");
+            if (arrayData[e.getAttribute("dataID")].backgroundImage) {
+                banner.style.backgroundImage = `url(${arrayData[e.getAttribute("dataID")].backgroundImage})`;
+                banner.style.backgroundSize = 'cover';
+                banner.style.backgroundPosition = 'center';
+                banner.classList.add("banner-with-bg");
+            } else {
+                banner.style.backgroundColor = arrayData[e.getAttribute("dataID")].backgroundColor || '#ffffff';
+            }
+
+            banner.classList.add("banner-expanded");
+
             setTimeout(() => {
-                banner.remove();
-            }, 500);
-        }
+                content.classList.add("visible");
+            }, 1200);
+        });
+    });
+
+    function goBackElements() {
+        let banner = document.querySelector('.banner');
+        banner.classList.add("hide");
+        setTimeout(() => {
+            banner.remove();
+        }, 500);
     }
+}
 
 
     // Seleccionar todos los elementos con la clase copyEmailButton

@@ -1,0 +1,59 @@
+[
+    {
+      "id": 0,
+      "name": "Pokemon Game",
+      "description": "Pokémon Game is a project inspired by Crew Conley's video 'Pizza Legends', which recreates the essence of classic Pokémon games, similar to Pokémon Platinum. Developed with HTML, CSS, and JavaScript, and featuring pixel art created in LibreSprite, it offers players the chance to explore a virtual world and engage in Pokémon battles in a web environment.",
+      "logo": "img/poke.gif",
+      "backgroundImage": "img/poke.gif",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "LibreSprite"],
+      "link": "https://techcea.github.io/Pokemon-RPG/",
+      "github": "https://github.com/TechCea/Pokemon-RPG"
+    },
+    {
+      "id": 1,
+      "name": "Capi Beads",
+      "description": "Capi Beads is a small Hama beads business where you can request any figure you want, and we bring it to life. In the 'Figures' section, you can see some examples of our work. On this page, you can only order pre-made figures.",
+      "logo": "img/Capi.jpg",
+      "backgroundImage": "img/pasto1.jpg",
+      "technologies": ["WordPress", "Elementor", "HTML5", "CSS3", "JavaScript"],
+      "link": "https://capi-capi.citasmedicasmaryury.com/",
+      "github": "https://github.com/usuario/capi-beads"
+    },
+    {
+      "id": 2,
+      "name": "Kat Pin Store",
+      "description": "Kat Pin Store is an online shop dedicated to offering the most creative and unique pins and accessories. While you cannot make purchases directly here, this space was created for you to explore and discover our full range of products.",
+      "logo": "img/katpin.jpg",
+      "technologies": ["HTML5", "CSS3", "JavaScript"],
+      "link": "https://techcea.github.io/KatPinStore/",
+      "github": "https://github.com/TechCea/KatPinStore"
+    },
+    {
+      "id": 3,
+      "name": "Yu-Gi-Oh! Card Explorer",
+      "description": "A search and browsing application for Yu-Gi-Oh! cards, allowing users to explore the extensive card catalog with advanced filters and view real-time details for each card. Developed using the YGOProDeck API to provide complete information on each card and deliver a unique experience for fans of the game.",
+      "logo": "img/Yugi.jpg",
+      "technologies": ["HTML5", "CSS3", "TypeScript", "Angular"],
+      "link": "https://proyecto-c.vercel.app/",
+      "github": "https://github.com/TechCea/ProyectoC"
+    },
+    {
+      "id": 4,
+      "name": "TierMaker",
+      "description": "This project is an interactive Tier Maker that allows users to create their own visual rankings intuitively. Inspired by a tutorial from Midudev, I implemented and enhanced the drag-and-drop functionality for images within different levels (tiers), adding custom features like a dynamic color picker for level customization and an option to save the ranking as a downloadable image.",
+      "logo": "img/tiermaker2.jpg",
+      "technologies": ["HTML5", "CSS3", "JavaScript"],
+      "link": "https://techcea.github.io/Tier-Maker/",
+      "github": "https://github.com/TechCea/Tier-Maker"
+    },
+    {
+      "id": 5,
+      "name": "Online Store",
+      "description": "🚧 Under Construction 🚧 This application is currently under development. Some features may not be available or still in the testing phase. Thank you for your understanding and patience!",
+      "logo": "img/joy.gif",
+      "technologies": ["WordPress", "HTML5", "CSS3", "JavaScript", "Angular"],
+      "link": "",
+      "github": "https://github.com/usuario/capi-beads"
+    }
+  ]
+  
