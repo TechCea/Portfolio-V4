@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 // Obtener el idioma guardado en localStorage (si existe), si no, usar 'en' por defecto
-let currentLanguage = localStorage.getItem('selectedLanguage') || 'en';
+let currentLanguage = localStorage.getItem('selectedLanguage') || 'es';
 
 // Función para cargar proyectos en base al idioma
 function loadProjects(language) {
