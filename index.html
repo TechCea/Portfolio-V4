@@ -18,16 +18,15 @@
 </head>
 <body>
     <header>
-        <!-- Botón de menú hamburguesa (visible en pantallas pequeñas) -->
         <span class="openMenu"><i class="fa-solid fa-bars"></i></span>
         <nav class="navbar glass">
             <span class="closeMenu"><i class="fa-solid fa-xmark"></i></span>
             <ul class="menu">
-                <li class="navbar-item"><a href="#home" class="a scroll active">Inicio</a></li>
+                <li class="navbar-item"><a href="#Home" class="a scroll active" id="nav-home">Inicio</a></li>
                 <span class="divider">•</span>
-                <li class="navbar-item"><a href="#projects" class="a scroll">Proyectos</a></li>
+                <li class="navbar-item"><a href="#Projects" class="a scroll" id="nav-projects">Proyectos</a></li>
                 <span class="divider">•</span>
-                <li class="navbar-item"><a href="#about" class="a scroll">Sobre mí</a></li>
+                <li class="navbar-item"><a href="#About" class="a scroll" id="nav-about">Sobre mí</a></li>
                 <span class="divider">•</span>
                 <li class="navbar-item">
                     <div id="language-toggle" class="language-toggle">
@@ -46,12 +45,12 @@
     </header>
     
 
-    <main class="main-container">
+    <main class="main-container" id="Home">
         <div class="bento-container">
             <div class="bento-item glass header">
-                <h1>¡Let's go to see my portfolio!</h1>
-                <h3><span class="text"></span></h3>
-                <p>Me encanta lo que hago porque me permite combinar mi creatividad con habilidades de comunicación visual y capacidad para resolver problemas.</p>
+                <h1 id="main-title">¡Vamos a ver mi portafolio!</h1>
+                <h3 id="main-subtitle"><span class="text"></span></h3>
+                <p id="main-description">Me encanta lo que hago porque me permite combinar mi creatividad con habilidades de comunicación visual y capacidad para resolver problemas.</p>
             </div>
             <div class="bento-item glass social-links">
                 <ul class="social-list">
@@ -84,20 +83,20 @@
             </div>
             <div class="bento-item glass studies">
                 <div class="card studies">
-                    <h3>Estudios</h3>
-                    <p>Estudiante de Ingeniería en Sistemas en la Universidad Católica de El Salvador (UNICAES)</p>
+                    <h3 id="studies-title">Estudios</h3>
+                    <p id="studies-description">Estudiante de Ingeniería en Sistemas en la Universidad Católica de El Salvador (UNICAES)</p>
                 </div>
             </div>
             <div class="bento-item glass cv">
                 <div class="image-blur"></div> <!-- Capa para la imagen desenfocada -->
-                <a href="assets/CV Javier.pdf" download="CV Javier.pdf" class="descargar-cv glass-button">
+                <a href="assets/CV Javier.pdf" download="CV Javier.pdf" class="descargar-cv glass-button" id="download-cv">
                     <span>Descargar CV</span>
                 </a>
             </div>
             <div class="bento-item glass scrum-card">
                 <i class='bx bxs-cog rotating-gear'></i>
-                <span class="scrum-title">Metodología Scrum</span>
-                <span class="scrum-text">Para el desarrollo de proyectos, utilizo metodologías Scrum.</span>
+                <span id="scrum-title" class="scrum-title">Metodología Scrum</span>
+                <span id="scrum-text" class="scrum-text">Para el desarrollo de proyectos, utilizo metodologías Scrum.</span>
             </div>
             <div class="bento-item glass avatar">
                 <div class="image-container">
@@ -107,17 +106,17 @@
             <div class="bento-item glass contact">
                 <div class="contact-tag">
                     <i class="bx bx-message-rounded"></i> <!-- Replace this with your preferred icon -->
-                    <span>Contactar</span>
+                    <span id="contact-tag-text">Contactar</span>
                 </div>
-                <p>Creando experiencias digitales únicas.<br>¡Hablemos sobre tu próximo proyecto!</p>
+                <p id="contact-description">Creando experiencias digitales únicas.<br>¡Hablemos sobre tu próximo proyecto!</p>
                 <div class="contact-buttons">
-                    <a target="_blank" href="mailto:jav.alarconcea@gmail.com" class="contact-button">Envíame un Email</a>
-                    <a target="_blank" href="http://t.me/TechCea" class="contact-button">DM en Telegram</a>
+                    <a target="_blank" href="mailto:jav.alarconcea@gmail.com" class="contact-button" id="contact-email">Envíame un Email</a>
+                    <a target="_blank" href="http://t.me/TechCea" class="contact-button" id="contact-telegram">DM en Telegram</a>
                 </div>
             </div>
             <div class="bento-item glass Tittle">
                 <article>
-                    <h2 class="h2-big" data-aos="fade" data-aos-duration="3000">
+                    <h2 class="h2-big"  id="tittle-hey" data-aos="fade" data-aos-duration="3000">
                         Hey I'm
                     </h2>
                     <div class="intro">
@@ -135,19 +134,19 @@
                     <div class="left">
                         <div class="status">
                             <div class="status-dot"></div>
-                            <h4>Disponibles para nuevos proyectos</h4>
+                            <h4 id="pixel-status">Disponibles para nuevos proyectos</h4>
                         </div>
                         <div class="tags-container">
                             <div class="tag">
                                 <i class="bi bi-geo-alt"></i> El Salvador, Santa Ana
                             </div>
-                            <div class="tag">
+                            <div class="tag" id="pixel-title">
                                 <i class="bi bi-mortarboard"></i> Systems Engineer
                             </div>
                             <div class="tag">
                                 <i class="bi bi-building-gear"></i> Universidad Catolica de el Salvador
                             </div>
-                            <div class="tag">
+                            <div class="tag" id="pixel-specialty">
                                 <i class="bi bi-laptop"></i> Web Applications
                             </div>
                         </div>
@@ -158,8 +157,8 @@
         </div>
  </main>
 
-    <section class="Projects-Container">
-        <h1 class="Tittle-Content">Major <span>Projects</span></h1>
+    <section class="Projects-Container" id="Projects">
+        <h1 class="Tittle-Content" id="projects-title">Major <span>Projects</span></h1>
         <div class="bento-container">
             <div class="bento-item Projects">
                 <div class="portfolio" id="portfolio" id="project">
@@ -172,18 +171,18 @@
                 </div>
             </div>
             <div class="bento-item glass Banner">
-                <h1>¡Te presento mi espacio creativo!</h1>
+                <h1 id="banner-text">¡Te presento mi espacio creativo!</h1>
             </div>
             <div class="bento-item glass About">
-                <h3> <span class="emoji">👈</span> Proyectos en los que estoy Trabajando</h3>
-                <p> A lo largo de mi carrera, he estado desarrollando proyectos innovadores y desafiantes, los cuales puedes explorar para conocer más sobre mi trabajo y las soluciones que he creado.<br> <strong>¡Descubre en qué estoy trabajando ahora y cómo estos proyectos están dando vida a mis ideas!</strong></p>
+                <h3 id="about-title"> <span class="emoji">👈</span> Proyectos en los que estoy Trabajando</h3>
+                <p id="about-description"> A lo largo de mi carrera, he estado desarrollando proyectos innovadores y desafiantes, los cuales puedes explorar para conocer más sobre mi trabajo y las soluciones que he creado.<br> <strong>¡Descubre en qué estoy trabajando ahora y cómo estos proyectos están dando vida a mis ideas!</strong></p>
             </div>
         </div>
     </section>
 
 
     <section class="Skills-Container">
-        <h1 class="Tittle-Content" id="Skills">My <span>Skills</span></h1>
+        <h1 class="Tittle-Content" id="skills-title">My <span>Skills</span></h1>
         <div class="container-group" >
             <div class="container1">
                 <div class="bento-box glass2" id="bento-box">
@@ -243,7 +242,7 @@
         <div class="container-group">
             <div class="container1">
                 <div class="bento-box glass2">
-                    <h2 class="learning">DataBase</h2>
+                    <h2 class="learning" id="DataBase">DataBase</h2>
                     <div class="items">
                         <div class="item">
                             <img src="img/icons/Oracle.svg" alt="" width="64" height="64">
@@ -262,7 +261,7 @@
             </div>
             <div class="container1">
                 <div class="bento-box glass2">
-                    <h2 class="tools">Tools</h2>
+                    <h2 class="tools" id="Tools">Tools</h2>
                     <div class="items">
                         <div class="item">
                             <i class='bx bxl-git' style="color: #F05032;"></i>
@@ -293,9 +292,9 @@
             </div>
         </div>
         <div class="content-wrapper">
-            <div>
-                <h2>¿Tienes algún proyecto?</h2>
-                <p>Trabajemos juntos</p>
+            <div >
+                <h2 id="wrapper-header">¿Tienes algún proyecto?</h2>
+                <p id="wrapper-subtext">Trabajemos juntos</p>
             </div>
             <div>
                 <a href="https://www.linkedin.com/in/carlos-javier-alarcon-cea-004019303?jobid=1234&lipi=urn%3Ali%3Apage%3Ad_jobs_easyapply_pdfgenresume%3BpU28VIsXRAWdY6IKxAf16A%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_jobs_easyapply_pdfgenresume-v02_profile" target="_blank" class="button">
@@ -313,17 +312,17 @@
 
     
     
-    <section class="About-Container">
-        <h1 class="Tittle-Content">Sobre <span>Mí</span></h1>
+    <section class="About-Container" id="About">
+        <h1 class="Tittle-Content" id="aboutTitle">Sobre <span>Mí</span></h1>
         <a class="close-modal-button"></a> 
         <div class="container">
             <div class="profile-info">
-              <h1>{ Desarrollador Frontend }</h1>
-              <p>Me llamo <strong>Carlos Javier Cea</strong> pero mis amigos me llaman <strong>Javi</strong>. Entré en este dinámico campo de forma inesperada, pero pronto descubrí una profunda satisfacción en la creación de interfaces, sitios web y experiencias digitales interactivas.</p>
+              <h1 id="profileInfo-header">{ Desarrollador Frontend }</h1>
+              <p id="profileInfo-intro">Me llamo <strong>Carlos Javier Cea</strong> pero mis amigos me llaman <strong>Javi</strong>. Entré en este dinámico campo de forma inesperada, pero pronto descubrí una profunda satisfacción en la creación de interfaces, sitios web y experiencias digitales interactivas.</p>
         
-              <p class="p-gray">Aunque todavía me encuentro en proceso de formación para convertirme en un profesional, estoy dedicando tiempo y esfuerzo a desarrollar <span class="highlight">habilidades en HTML, CSS, JavaScript y Angular</span>, así como a comprender mejor los <span class="highlight">principios de diseño y experiencia de usuario</span>.<br> Mi objetivo es seguir creciendo en este campo, aplicando lo aprendido en proyectos prácticos y colaborando con otros <span class="highlight">profesionales apasionados</span>.</p>
+              <p class="p-gray" id="profileInfo-skillset">Aunque todavía me encuentro en proceso de formación para convertirme en un profesional, estoy dedicando tiempo y esfuerzo a desarrollar <span class="highlight">habilidades en HTML, CSS, JavaScript y Angular</span>, así como a comprender mejor los <span class="highlight">principios de diseño y experiencia de usuario</span>.<br> Mi objetivo es seguir creciendo en este campo, aplicando lo aprendido en proyectos prácticos y colaborando con otros <span class="highlight">profesionales apasionados</span>.</p>
         
-              <p class="p-gray">Estoy enfocado en crecer como <span class="highlight">futuro desarrollador Front-end</span>, buscando oportunidades para aprender y contribuir a <span class="highlight">soluciones digitales innovadoras</span>. <span class="highlight">Tengo pasión por la música</span>, lo que potencia mi concentración y creatividad. <span class="highlight">Me considero un aprendiz ágil</span>, detallista y comprometido, y <span class="highlight">valoro las lecciones aprendidas</span> a través de la experiencia.</p>
+              <p class="p-gray" id="profileInfo-growth">Estoy enfocado en crecer como <span class="highlight">futuro desarrollador Front-end</span>, buscando oportunidades para aprender y contribuir a <span class="highlight">soluciones digitales innovadoras</span>. <span class="highlight">Tengo pasión por la música</span>, lo que potencia mi concentración y creatividad. <span class="highlight">Me considero un aprendiz ágil</span>, detallista y comprometido, y <span class="highlight">valoro las lecciones aprendidas</span> a través de la experiencia.</p>
 
         
             </div>
@@ -375,11 +374,11 @@
                     <span class="icon-pixel">
                         <img src="img/ProfileAvatar.png" class="pixelart" alt="Maletín" width="60" height="60" loading="lazy" decoding="async">
                     </span>
-                    Ingeniero en UX/UI
+                    <span id="soft-pixel-title">Ingeniero en UX/UI</span>
                 </h3>
                 <div class="article-content">
-                    <p>Apasionado por la tecnología, con una actitud <strong>empática</strong>, responsable y comprometida. Me enfrento a cualquier desafío con el objetivo de crear soluciones eficientes y estéticamente cuidadas.</p>
-                    <p>Me enfoco en el <strong>crecimiento continuo</strong> de mis competencias técnicas para optimizar tanto la experiencia de usuario (UX) como el diseño de interfaces (UI) en cada proyecto.</p>
+                    <p id="pixel-description-1">Apasionado por la tecnología, con una actitud <strong>empática</strong>, responsable y comprometida. Me enfrento a cualquier desafío con el objetivo de crear soluciones eficientes y estéticamente cuidadas.</p>
+                    <p id="pixel-description-2">Me enfoco en el <strong>crecimiento continuo</strong> de mis competencias técnicas para optimizar tanto la experiencia de usuario (UX) como el diseño de interfaces (UI) en cada proyecto.</p>
                 </div>
             </article>
         
@@ -388,21 +387,21 @@
                     <span class="icon-item2">
                         <img src="img/icons/icons8-creativity-48.png" alt="Soft Skills" width="30" height="30" loading="lazy" decoding="async">
                     </span>
-                    Habilidades blandas
+                    <span id="soft-skills-title">Habilidades blandas</span>
                 </h3>
                 <div class="article-content">
-                    <p>En un entorno profesional en constante cambio, las <strong>habilidades blandas</strong> son esenciales para generar conexiones, impulsar la colaboración y gestionar proyectos de manera eficaz.</p>
-        <p>Más allá de las habilidades técnicas, el desarrollo de estas competencias permite adaptarse con agilidad y liderar con éxito.</p>
+                    <p id="soft-skills-description-1">En un entorno profesional en constante cambio, las <strong>habilidades blandas</strong> son esenciales para generar conexiones, impulsar la colaboración y gestionar proyectos de manera eficaz.</p>
+                    <p id="soft-skills-description-2">Más allá de las habilidades técnicas, el desarrollo de estas competencias permite adaptarse con agilidad y liderar con éxito.</p>
                 </div>
                 <div class="skills-list-soft">
-                    <span class="skill-soft">Flexibilidad</span>
-                    <span class="skill-soft">Creatividad</span>
-                    <span class="skill-soft">Empatía</span>
-                    <span class="skill-soft">Gestión del tiempo</span>
-                    <span class="skill-soft">Adaptación y tolerancia</span>
-                    <span class="skill-soft">Aprendizaje continuo</span>
-                    <span class="skill-soft">Paciencia</span>
-                    <span class="skill-soft">Capacidad para aceptar críticas constructivas</span>
+                    <span id="skill-flexibility" class="skill-soft">Flexibilidad</span>
+                    <span id="skill-creativity" class="skill-soft">Creatividad</span>
+                    <span id="skill-empathy" class="skill-soft">Empatía</span>
+                    <span id="skill-time-management" class="skill-soft">Gestión del tiempo</span>
+                    <span id="skill-adaptation" class="skill-soft">Adaptación y tolerancia</span>
+                    <span id="skill-continuous-learning" class="skill-soft">Aprendizaje continuo</span>
+                    <span id="skill-patience" class="skill-soft">Paciencia</span>
+                    <span id="skill-constructive-feedback" class="skill-soft">Capacidad para aceptar críticas constructivas</span>
                 </div>
             </article>
         
@@ -411,11 +410,11 @@
                     <span class="icon-item2">
                         <img src="img/icons/icons8-education-48.png" alt="Educación" width="30" height="30" loading="lazy" decoding="async">
                     </span>
-                    Educación
+                    <span id="education-title">Educación</span>
                 </h3>
                 <div class="article-content">
-                    <p class="highlight">Estudiante de Ingeniería en Sistemas Informáticos</p>
-                    <p>Actualmente, curso mi cuarto año en la UNICAES, donde estoy desarrollando competencias en programación, arquitectura de sistemas y bases de datos. Estoy trabajando en proyectos de forma independiente para practicar y fortalecer mis habilidades en el campo.</p>
+                    <p id="education-highlight" class="highlight">Estudiante de Ingeniería en Sistemas Informáticos</p>
+                    <p id="education-description">Actualmente, curso mi cuarto año en la UNICAES, donde estoy desarrollando competencias en programación, arquitectura de sistemas y bases de datos. Estoy trabajando en proyectos de forma independiente para practicar y fortalecer mis habilidades en el campo.</p>
                 </div>
             </article>
         
@@ -424,7 +423,7 @@
                     <span class="icon-item2">
                         <img src="img/corazon.svg" alt="Emoji de un corazón" width="30" height="30" loading="lazy" decoding="async">
                     </span>
-                    Gustos y pasatiempos
+                    <span id="hobbies-title">Gustos y pasatiempos</span>
                 </h3>
                 <div class="hobbies-grid">
                     <div class="hobby">
@@ -437,7 +436,7 @@
                     </div>
                     <div class="hobby">
                         <img src="img/icons/icons8-games-48.png" alt="Cine" width="64" height="64" loading="lazy" decoding="async">
-                        <p>❤️ Juegos</p>
+                        <p id="hobby-games">❤️ Juegos</p>
                     </div>
                 </div>
             </article>
@@ -447,145 +446,145 @@
 
     <section>
         <div class="container-certi">
-            <h1 class="Tittle-Content">My <span>Certificates</span></h1>
+            <h1 class="Tittle-Content" id="certificates-title">My <span>Certificates</span></h1>
             <div class="card-container">
                 <div class="card-certi glass-accordion">
                     <img src="img/udemy.jpeg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>HTML and CSS for Beginners</h3>
-                        <p>Udemy</p>
-                        <h5>Certification obtained on <span>09/06/24</span></h5>
-                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-7f3715fc-9cb5-49fa-8347-94af2edc1b79.pdf" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-1-title">HTML and CSS for Beginners</h3>
+                        <p id="certificate-1-provider">Udemy</p>
+                        <h5 id="certificate-1-date">Certification obtained on <span id="certificate-1-date-span">09/06/24</span></h5>
+                        <a id="certificate-1-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-7f3715fc-9cb5-49fa-8347-94af2edc1b79.pdf" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
     
                 <div class="card-certi glass-accordion">
                     <img src="img/udemy.jpeg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>Curso de Java - Nivel Básico</h3>
-                        <p>Udemy</p>
-                        <h5>Certification obtained on <span>28/04/24</span></h5>
-                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-1ff83aec-b611-47d8-bb3b-7dcdf1adc991.pdf" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-2-title">Curso de Java - Nivel Básico</h3>
+                        <p id="certificate-2-provider">Udemy</p>
+                        <h5 id="certificate-2-date">Certification obtained on <span id="certificate-2-date-span">28/04/24</span></h5>
+                        <a id="certificate-2-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-1ff83aec-b611-47d8-bb3b-7dcdf1adc991.pdf" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
             </div>
-
+    
             <div class="card-container">
                 <div class="card-certi glass-accordion">
                     <img src="img/udemy.jpeg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>Curso de Laravel 9</h3>
-                        <p>Udemy</p>
-                        <h5>Certification obtained on <span>28/04/24</span></h5>
-                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-541dc8ff-5a3a-42a6-9edc-7a7ea5f10849.pdf" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-3-title">Curso de Laravel 9</h3>
+                        <p id="certificate-3-provider">Udemy</p>
+                        <h5 id="certificate-3-date">Certification obtained on <span id="certificate-3-date-span">28/04/24</span></h5>
+                        <a id="certificate-3-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-541dc8ff-5a3a-42a6-9edc-7a7ea5f10849.pdf" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
     
                 <div class="card-certi glass-accordion">
                     <img src="img/udemy.jpeg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>Master Web & Mobile Design: Figma</h3>
-                        <p>Udemy</p>
-                        <h5>Certification obtained on <span>20/06/2024</span></h5> 
-                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-83c78a45-d364-464d-aad8-ae9af0d81667.pdf" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-4-title">Master Web & Mobile Design: Figma</h3>
+                        <p id="certificate-4-provider">Udemy</p>
+                        <h5 id="certificate-4-date">Certification obtained on <span id="certificate-4-date-span">20/06/2024</span></h5>
+                        <a id="certificate-4-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-83c78a45-d364-464d-aad8-ae9af0d81667.pdf" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
             </div>
-
+    
             <div class="card-container">
                 <div class="card-certi glass-accordion">
                     <img src="img/Cody.jpg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>Curso Profesional de Angular</h3>
-                        <p>Codigo Facilito</p>
-                        <h5>Certification obtained on <span>29/10/24</span></h5>
-                        <a href="https://codigofacilito.com/certificates/21f321b1-4bdd-4a46-88ae-d33750fb38b2" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-5-title">Curso Profesional de Angular</h3>
+                        <p id="certificate-5-provider">Codigo Facilito</p>
+                        <h5 id="certificate-5-date">Certification obtained on <span id="certificate-5-date-span">29/10/24</span></h5>
+                        <a id="certificate-5-link" href="https://codigofacilito.com/certificates/21f321b1-4bdd-4a46-88ae-d33750fb38b2" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
     
                 <div class="card-certi glass-accordion">
                     <img src="img/udemy.jpeg" alt="Logo" class="logo" />
                     <div class="card-content">
-                        <h3>CSS3 For Web Development</h3>
-                        <p>Udemy</p>
-                        <h5>Certification obtained on <span>30/10/24</span></h5>
-                        <a href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-25812631-3f89-4b00-af59-2832c60d5853.pdf" target="_blank">Ver Certificado</a>
+                        <h3 id="certificate-6-title">CSS3 For Web Development</h3>
+                        <p id="certificate-6-provider">Udemy</p>
+                        <h5 id="certificate-6-date">Certification obtained on <span id="certificate-6-date-span">30/10/24</span></h5>
+                        <a id="certificate-6-link" href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-25812631-3f89-4b00-af59-2832c60d5853.pdf" target="_blank">Ver Certificado</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
+
     <aside class="section-faq">
-		<div class="container-faq">
-			<h4 class="Tittle-Content">Preguntas <span>Frecuentes</span></h4>
-		</div>
+        <div class="container-faq">
+            <h4 id="faq-title" class="Tittle-Content">Preguntas <span id="faq-span">Frecuentes</span></h4>
+        </div>
         
-		<article class="article-faq">
+        <article class="article-faq">
             <div class="faq-container">
                 <details class="glass-accordion" name="my-accordion" open>
-                    <summary><span class="icon"></span>¿Cuál es tu experiencia en el desarrollo web?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-1">¿Cuál es tu experiencia en el desarrollo web?</span></summary>
+                    <p id="answer-1">
                         Estoy en las primeras etapas de mi carrera como desarrollador Front-end. Actualmente curso mi cuarto año de Ingeniería en Sistemas Informáticos en UNICAES, y he estado trabajando en proyectos independientes para mejorar mis habilidades en HTML, CSS y JavaScript.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Cuál es tu enfoque y especialidad en desarrollo?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-2">¿Cuál es tu enfoque y especialidad en desarrollo?</span></summary>
+                    <p id="answer-2">
                         Me especializo en el desarrollo Front-end, donde disfruto combinando creatividad con habilidades para resolver problemas. Actualmente, estoy profundizando en herramientas como Angular y diseño UX/UI, con el objetivo de optimizar la experiencia del usuario en cada proyecto que realizo, buscando siempre un equilibrio entre funcionalidad y diseño atractivo.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Cómo abordas la resolución de problemas?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-3">¿Cómo abordas la resolución de problemas?</span></summary>
+                    <p id="answer-3">
                         Mi enfoque consiste en dividir el problema en partes más pequeñas, investigar soluciones y mantener siempre una actitud de aprendizaje. Me esfuerzo en comunicarme de forma clara y trabajar en equipo cuando sea necesario.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Cómo te mantienes actualizado con las nuevas tecnologías en desarrollo web?</summary>
-                    <p>
-                        Me gusta estar al tanto de las últimas tendencias en desarrollo web mediante la lectura de blogs y articulos, participación en comunidades de desarrolladores y cursos online. Además, me aseguro de practicar regularmente con nuevas herramientas y frameworks como Angular, lo que me permite mantenerme actualizado y mejorar continuamente mis habilidades.
+                    <summary><span class="icon"></span><span id="question-4">¿Cómo te mantienes actualizado con las nuevas tecnologías en desarrollo web?</span></summary>
+                    <p id="answer-4">
+                        Me gusta estar al tanto de las últimas tendencias en desarrollo web mediante la lectura de blogs y artículos, participación en comunidades de desarrolladores y cursos online. Además, me aseguro de practicar regularmente con nuevas herramientas y frameworks como Angular, lo que me permite mantenerme actualizado y mejorar continuamente mis habilidades.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Qué tecnologías estás aprendiendo o utilizando?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-5">¿Qué tecnologías estás aprendiendo o utilizando?</span></summary>
+                    <p id="answer-5">
                         Actualmente estoy enfocándome en HTML, CSS, JavaScript y Angular, los cuales utilizo activamente en mis proyectos. También estoy explorando herramientas como Git y GitHub para la gestión eficiente de proyectos y el control de versiones, mejorando mis flujos de trabajo y colaboraciones.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Qué te motiva a seguir aprendiendo en desarrollo web?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-6">¿Qué te motiva a seguir aprendiendo en desarrollo web?</span></summary>
+                    <p id="answer-6">
                         Me motiva la posibilidad de crear experiencias digitales únicas. Cada nuevo desafío es una oportunidad para mejorar mis habilidades y aprender nuevas tecnologías. Disfruto de la mezcla entre creatividad y técnica que ofrece el desarrollo web.
                     </p>
                 </details>
                 <details class="glass-accordion" name="my-accordion">
-                    <summary><span class="icon"></span>¿Tienes algún interés o pasatiempo fuera del desarrollo web?</summary>
-                    <p>
+                    <summary><span class="icon"></span><span id="question-7">¿Tienes algún interés o pasatiempo fuera del desarrollo web?</span></summary>
+                    <p id="answer-7">
                         Me apasiona la música, los videojuegos, especialmente Pokémon, y leer mangas. Estos pasatiempos no solo me permiten relajarme, sino también encontrar inspiración creativa para mis proyectos. Además, disfruto pasar tiempo con mi familia y amigos, lo que me ayuda a mantener un buen equilibrio entre el trabajo y el ocio.
                     </p>
                 </details>
             </div>
         </article>
-	</aside>
-
+    </aside>
+    
 
 
     <section class="contact-me" id="Contact">
         <div class="contactme">
-            <h1 class="Tittle-Content">Contact <span>Me</span></h1>
+            <h1 class="Tittle-Content" id="contact-title">Contact <span>Me</span></h1>
         </div>
             <div class="contact-container">
                 <form action="https://api.web3forms.com/submit" method="POST" class="contact-left glass2" >
                     <div class="container-left-tittle">
-                        <h2>Ponte en contacto</h2>
+                        <h2 id="contact-form-title">Ponte en contacto</h2>
                         <hr>
                     </div>
                     <input type="hidden" name="access_key" value="8dc0b92e-f98b-4228-8fe0-6e5084bd7b2a">
-                    <input type="text" name="email" placeholder="Your Email" id="" class="contact-inputs" required>
+                    <input type="text" name="email" placeholder="Your Email" class="contact-inputs" required>
                     <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                    <button type="submit">Submit <i class='bx bxs-send'></i></button>
+                    <button type="submit" id="contact-submit">Submit <i class='bx bxs-send'></i></button>
                 </form>
                 <div class="contact-right" style="z-index: 2;">
                     <img src="img/mochila.png" alt="">
@@ -625,7 +624,7 @@
         </ul>
     </div>
         <div class="foot-text">
-            <h4>Developed by TechCea</h4>
+            <h4 id="footer-text">Developed by TechCea</h4>
         </div>
     </footer> 
 </body>
