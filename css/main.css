@@ -108,7 +108,9 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-thumb:hover{
     background: linear-gradient(170deg, var(--crimson-red), var(--dark-red));
 }
-
+body.no-scroll {
+    overflow: hidden;
+}
 header {
     position: fixed;
     top: 0;
@@ -3360,7 +3362,7 @@ details[open] .icon {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 100px);
     grid-auto-rows: minmax(100px, auto);
-    gap: 15px;
+    gap: 10px;
     position: relative;
     z-index: 2;
 }

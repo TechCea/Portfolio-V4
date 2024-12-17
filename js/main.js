@@ -1,19 +1,3 @@
-const subtitles = {
-    es: ["Descubre mis proyectos", "Descubre mis habilidades", "en desarrollo web."],
-    en: ["Discover my projects", "Discover my skills", "in web development."]
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-    const userLang = navigator.language.startsWith("es") ? "es" : "en";
-
-    new Typed(".text", {
-        strings: subtitles[userLang],
-        typeSpeed: 50,
-        backSpeed: 50,
-        backDelay: 1000,
-        loop: true
-    });
-});
     
     document.addEventListener('DOMContentLoaded', function() {
         const toggle = document.getElementById('theme-toggle');
@@ -383,6 +367,7 @@ function changeLanguage(lang) {
             "nav-projects": "Proyectos",
             "nav-about": "Sobre mí",
             "main-title": "¡Vamos a ver mi portafolio!",
+            "main-subtitle": "<span class='text'>Ingeniero en Sistemas</span>",
             "main-description": "Me encanta lo que hago porque me permite combinar mi creatividad con habilidades de comunicación visual y capacidad para resolver problemas.",
             "projects-title": "Proyectos <span>Importantes</span>",
             "studies-title": "Estudios",
@@ -396,8 +381,8 @@ function changeLanguage(lang) {
             "contact-telegram": "DM en Telegram",
             "tittle-hey": "Ey Soy",
             "pixel-status": "Disponibles para nuevos proyectos",
-            "pixel-title": "Ingeniero en Sistemas",
-            "pixel-specialty": "Aplicaciones Web",
+            "pixel-title": "<i class='bi bi-mortarboard'></i> Ingeniero en Sistemas",
+            "pixel-specialty": "<i class='bi bi-laptop'></i> Aplicaciones Web",
             "banner-text": "¡Te presento mi espacio creativo!",
             "about-title": "<span class='emoji'>👈</span> Proyectos en los que estoy Trabajando",
             "about-description": "A lo largo de mi carrera, he estado desarrollando proyectos innovadores y desafiantes, los cuales puedes explorar para conocer más sobre mi trabajo y las soluciones que he creado.<br><strong>¡Descubre en qué estoy trabajando ahora y cómo estos proyectos están dando vida a mis ideas!</strong>",
@@ -481,6 +466,7 @@ function changeLanguage(lang) {
             "nav-projects": "Projects",
             "nav-about": "About me",
             "main-title": "Let's go to see my portfolio!",
+            "main-subtitle": "<span class='text'>Systems Engineer</span>",
             "main-description": "I love what I do because it allows me to combine my creativity with visual communication skills and problem-solving ability.",
             "projects-title": "Major <span>Projects</span>",
             "studies-title": "Studies",
@@ -494,8 +480,8 @@ function changeLanguage(lang) {
             "contact-telegram": "DM on Telegram",
             "tittle-hey": "Hey I'm",
             "pixel-status": "Available for new projects",
-            "pixel-title": "Systems Engineer",
-            "pixel-specialty": "Web Applications",
+            "pixel-title": "<i class='bi bi-mortarboard'></i> Systems Engineer",
+            "pixel-specialty": "<i class='bi bi-laptop'></i> Web Applications",
             "banner-text": "Welcome to my creative space!",
             "about-title": "<span class='emoji'>👈</span> Projects I'm Working On",
             "about-description": "Throughout my career, I've been developing innovative and challenging projects that you can explore to learn more about my work and the solutions I've created.<br><strong>Discover what I'm working on now and how these projects are bringing my ideas to life!</strong>",
@@ -614,16 +600,16 @@ function updateToggleButton(lang) {
 }
 
 
-
-
 const openBtn = document.querySelector(".openMenu");
 const closeBtn = document.querySelector(".closeMenu");
 const navbar = document.querySelector(".navbar");
 
+// Función para ajustar la visibilidad del menú en función del tamaño de la pantalla
 function ajustarVisibilidadMenu() {
     if (window.innerWidth > 768) {
         navbar.classList.remove("visible", "hidden");
         openBtn.style.display = "none";
+        document.body.classList.remove("no-scroll"); // Asegura que el scroll esté habilitado en pantallas grandes
     } else {
         navbar.classList.add("hidden");
         navbar.classList.remove("visible");
@@ -631,20 +617,26 @@ function ajustarVisibilidadMenu() {
     }
 }
 
+// Llamada inicial para ajustar la visibilidad del menú
 ajustarVisibilidadMenu();
 
+// Función para abrir el menú
 openBtn.addEventListener("click", () => {
     navbar.classList.remove("hidden");
     navbar.classList.add("visible");
     openBtn.style.display = "none";
+    document.body.classList.add("no-scroll"); // Desactiva el scroll cuando el menú está abierto
 });
 
+// Función para cerrar el menú
 closeBtn.addEventListener("click", () => {
     navbar.classList.add("hidden");
     navbar.classList.remove("visible");
     openBtn.style.display = "block";
+    document.body.classList.remove("no-scroll"); // Reactiva el scroll cuando el menú está cerrado
 });
 
+// Escucha los cambios de tamaño de la ventana para ajustar el menú
 window.addEventListener("resize", ajustarVisibilidadMenu);
 
 
